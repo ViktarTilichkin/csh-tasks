@@ -119,6 +119,8 @@
 
 {
     Console.WriteLine("Задача номер 7");
+    Console.WriteLine("Введите число А для проверки: ");
+    double numberA = Convert.ToDouble(Console.ReadLine());
 }
 // 8. Пользователь вводит порядковый номер пальца руки. Необходимо показать его
 // название на экран.
