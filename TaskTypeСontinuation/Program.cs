@@ -1,78 +1,84 @@
-﻿// 1. Вы вводите значение с клавиатуры. Если значение равно 0, то вывести ‘Ноль’,
-// если < 0, то вывести ‘Отрицательное’, если > 0, то вывести ‘Положительное’
+﻿// // 1. Вы вводите значение с клавиатуры. Если значение равно 0, то вывести ‘Ноль’,
+// // если < 0, то вывести ‘Отрицательное’, если > 0, то вывести ‘Положительное’
 
-{
-    Console.WriteLine("Задача номер 1");
-    Console.WriteLine("Введите число для проверки: ");
-    double number = Convert.ToDouble(Console.ReadLine());
-    string message;
-    if (number > 0)
-    {
-        message = "Положительное";
-    }
-    else if (number < 0)
-    {
-        message = "Отрицательно";
-    }
-    else
-    {
-        message = "Ноль";
-    }
-    Console.WriteLine(message);
-}
+// {
+//     Console.WriteLine("Задача номер 1");
+//     Console.WriteLine("Введите число для проверки: ");
+//     double number = Convert.ToDouble(Console.ReadLine());
+//     string message;
+//     if (number > 0)
+//     {
+//         message = "Положительное";
+//     }
+//     else if (number < 0)
+//     {
+//         message = "Отрицательно";
+//     }
+//     else
+//     {
+//         message = "Ноль";
+//     }
+//     Console.WriteLine(message);
+// }
 
-// // 2. Вы вводите значение с клавиатуры. Если значение четное, то вывести true, в
-// // противном случае false
+// // // 2. Вы вводите значение с клавиатуры. Если значение четное, то вывести true, в
+// // // противном случае false
 
-{
-    Console.WriteLine("Задача номер 2");
-    Console.WriteLine("Введите число для проверки: ");
-    double number = Convert.ToDouble(Console.ReadLine());
-    string message;
-    message = number % 2 == 0 ? "true" : "false";
-    Console.WriteLine(message);
-}
+// {
+//     Console.WriteLine("Задача номер 2");
+//     Console.WriteLine("Введите число для проверки: ");
+//     double number = Convert.ToDouble(Console.ReadLine());
+//     string message;
+//     message = number % 2 == 0 ? "true" : "false";
+//     Console.WriteLine(message);
+// }
 
-// // 3. Пользователь вводит с клавиатуры число. Найдите корень введенного числа
-// // (если же результат – число с плавающей точкой, то округлить до 2 знаков после
-// // запятой).
+// // // 3. Пользователь вводит с клавиатуры число. Найдите корень введенного числа
+// // // (если же результат – число с плавающей точкой, то округлить до 2 знаков после
+// // // запятой).
 
-{
-    Console.WriteLine("Задача номер 3");
-    Console.WriteLine("Введите число для проверки: ");
-    double number = Convert.ToDouble(Console.ReadLine());
-    double result = Math.Round(Math.Sqrt(number), 2);
-    Console.WriteLine(result);
-}
+// {
+//     Console.WriteLine("Задача номер 3");
+//     Console.WriteLine("Введите число для проверки: ");
+//     double number = Convert.ToDouble(Console.ReadLine());
+//     double result = Math.Round(Math.Sqrt(number), 2);
+//     Console.WriteLine(result);
+// }
 
-// 4. Пользователь вводит с клавиатуры 2 числа: a и b. Проверьте, что a делится без
-// остатка на b. Если это так - выведите 'Делится' и результат деления, иначе
-// выведите 'Делится с остатком' и остаток от деления
+// // 4. Пользователь вводит с клавиатуры 2 числа: a и b. Проверьте, что a делится без
+// // остатка на b. Если это так - выведите 'Делится' и результат деления, иначе
+// // выведите 'Делится с остатком' и остаток от деления
 
-{
-    Console.WriteLine("Задача номер 4");
-    Console.WriteLine("Введите число А для проверки: ");
-    double numberA = Convert.ToDouble(Console.ReadLine());
-    Console.WriteLine("Введите число B для проверки: ");
-    double numberB = Convert.ToDouble(Console.ReadLine());
-    double result;
-    if ( numberA % numberB == 0){
-        result = numberA / numberB;
-        Console.WriteLine($"Делиться целиком, резульат: {result}");
-    }
-    else {
-        result = numberA % numberB;
-        Console.WriteLine(result);
-        Console.WriteLine($"Делиться с остатком, остаток: {result}");
-    }
-}
+// {
+//     Console.WriteLine("Задача номер 4");
+//     Console.WriteLine("Введите число А для проверки: ");
+//     double numberA = Convert.ToDouble(Console.ReadLine());
+//     Console.WriteLine("Введите число B для проверки: ");
+//     double numberB = Convert.ToDouble(Console.ReadLine());
+//     double result;
+//     if (numberA % numberB == 0)
+//     {
+//         result = numberA / numberB;
+//         Console.WriteLine($"Делиться целиком, резульат: {result}");
+//     }
+//     else
+//     {
+//         result = numberA % numberB;
+//         Console.WriteLine(result);
+//         Console.WriteLine($"Делиться с остатком, остаток: {result}");
+//     }
+// }
 
-// 5. Пользователь вводит с клавиатуры число. Найдите корень введенного числа
-// (если же результат – число с плавающей точкой, то округлить то целых)
+// // 5. Пользователь вводит с клавиатуры число. Найдите корень введенного числа
+// // (если же результат – число с плавающей точкой, то округлить то целых)
 
-{
-    Console.WriteLine("Задача номер 5");
-}
+// {
+//     Console.WriteLine("Задача номер 5");
+//     Console.WriteLine("Введите число для проверки: ");
+//     double number = Convert.ToDouble(Console.ReadLine());
+//     double result = Math.Round(Math.Sqrt(number), 0);
+//     Console.WriteLine(result);
+// }
 // 6. Даны три числа a, b, c. Напишите программу, которая находит корни квадратного
 // уравнения
 // ax^2 + bx + c = 0
@@ -80,6 +86,30 @@
 
 {
     Console.WriteLine("Задача номер 6");
+    Console.WriteLine("Введите число А для проверки: ");
+    double numberA = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите число B для проверки: ");
+    double numberB = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите число С для проверки: ");
+    double numberС = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine($"Получившиеся уровнение дискриминанта: {numberA}*x^2+{numberB}*x+{numberС}=0");
+    double resultDiscriminant = Math.Pow(numberB, 2) - 4 * numberA * numberС;
+    if (resultDiscriminant > 0)
+    {
+        double rootnumberX1 = (-numberB + Math.Sqrt(resultDiscriminant) / (2 * numberA));
+        double rootnumberX2 = (-numberB - Math.Sqrt(resultDiscriminant) / (2 * numberA));
+        string message = rootnumberX1 > rootnumberX2 ? $"Корень X1: {rootnumberX1}. Корень X2: {rootnumberX2}." : $"Корень X2: { rootnumberX2}. Корень X1: { rootnumberX1}.";
+        Console.WriteLine($"D = {resultDiscriminant}. {message}");
+    }
+    else if (resultDiscriminant == 0)
+    {
+        double rootnumberX1 = (-numberB) / (2 * numberA);
+        Console.WriteLine($"D = 0, уровнение имеет один корень: {rootnumberX1}");
+    }
+    else
+    {
+        Console.WriteLine("D<0. Нет корней");
+    }
 }
 // 7. Пользователь вводит число от 1 до 9999 (сумму выдачи в банкомате). Необходимо
 // вывести на экран словами введенную сумму и в конце написать название валюты
