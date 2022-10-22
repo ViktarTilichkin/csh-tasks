@@ -168,6 +168,15 @@
 
 {
     Console.WriteLine("Задача номер 9");
+    Console.WriteLine("Введите число А для проверки: ");
+    int numberA = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите число B для проверки: ");
+    int numberB = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите результат умножения A на B: ");
+    int resultTester = Convert.ToInt32(Console.ReadLine());
+    int resultProgramm = numberA * numberB;
+    string message = resultProgramm == resultTester ? "Вы умеете умнажать!" : $"Ответ не правильный. правильно: {resultProgramm}";
+    Console.WriteLine(message);
 }
 
 // 10. Пользователь вводит два числа, если хотя бы одно число равно 0 то необходимо
