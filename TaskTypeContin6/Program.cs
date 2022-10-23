@@ -30,37 +30,37 @@
     Console.WriteLine("Задача 3. ");
     Console.WriteLine("Введите день недели: ");
     double number = Convert.ToDouble(Console.ReadLine());
-switch (number)
-{
-    case 1 :
-    Console.WriteLine("Понедельник");
-    break;
-     case 2 :
-    Console.WriteLine("Вторник");
-    break;
-     case 3 :
-    Console.WriteLine("Среда");
-    break;
-     case 4 :
-    Console.WriteLine("Четверг");
-    break;
-     case 5 :
-    Console.WriteLine("Пятница");
-    break;
-     case 6 :
-    Console.WriteLine("Суббота");
-    break;
-     case 7 :
-    Console.WriteLine("Воскресенье");
-    break;
-    default:
-    Console.WriteLine("Дня недели под таким номером нет!");
-    break;
-}
+    switch (number)
+    {
+        case 1:
+            Console.WriteLine("Понедельник");
+            break;
+        case 2:
+            Console.WriteLine("Вторник");
+            break;
+        case 3:
+            Console.WriteLine("Среда");
+            break;
+        case 4:
+            Console.WriteLine("Четверг");
+            break;
+        case 5:
+            Console.WriteLine("Пятница");
+            break;
+        case 6:
+            Console.WriteLine("Суббота");
+            break;
+        case 7:
+            Console.WriteLine("Воскресенье");
+            break;
+        default:
+            Console.WriteLine("Дня недели под таким номером нет!");
+            break;
+    }
 }
 
-4. Есть строка в 3 символа. Написать проверку если число, вывести true, в
-противном случае false (Char.IsDigit(str2, position))
+// 4.Есть строка в 3 символа. Написать проверку если число, вывести true, в
+// противном случае false (Char.IsDigit(str2, position))
 
 {
     Console.WriteLine("Задача 4. ");
@@ -79,9 +79,9 @@ switch (number)
     Console.WriteLine("Введите число: ");
     double number = Convert.ToDouble(Console.ReadLine());
     int result = (Convert.ToString(number)).Length;
-    string message = number > 0 ? $"В числе {number} количество знаков {result} и оно положительное" : $"В числе {number} количество знаков {result-1} и оно отрицательно";
+    string message = number > 0 ? $"В числе {number} количество знаков {result} и оно положительное" : $"В числе {number} количество знаков {result - 1} и оно отрицательно";
     Console.WriteLine(message);
-    }
+}
 
 // 6. Найти квадратный корень числа. Если же число без плавающей точки, то просто
 // вывести его. В противном случае необходимо округлить число до целых.
@@ -99,24 +99,115 @@ switch (number)
 // Определите, через какое время автомобили встретятся, если расстояние между
 // ними равно S км. Добавить проверку на ввод только чисел
 
+{
+    Console.WriteLine("Задача номер 7.");
+    Console.WriteLine("Введите скорость первого автомобиля: ");
+    double speedcar1 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите скорость второго автомобиля: ");
+    double speedcar2 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Введите расстояние между автомобилями: ");
+    double distance = Convert.ToDouble(Console.ReadLine());
+    int result = Convert.ToInt32((distance / (speedcar1 + speedcar2))*60);
+    Console.WriteLine ($"Автомобили встретятся через {result} минут");
+}
+
 // 8. Пользователь вводит номер месяц. Необходимо вывести пору года по номеру
 // месяца (2 способа)
 
+{
+    Console.WriteLine("Задача номер 8.");
+    Console.WriteLine("Номер месяца: ");
+    int numberMonth = Convert.ToInt32(Console.ReadLine());
+    if (numberMonth >= 1 && numberMonth <= 2 || numberMonth == 12)
+    {
+        Console.WriteLine("Зима");
+    }
+    else if (numberMonth >= 3 && numberMonth <= 5)
+    {
+        Console.WriteLine("Весна");
+    }
+    else if (numberMonth >= 6 && numberMonth <= 8)
+    {
+        Console.WriteLine("Лето");
+    }
+    else if (numberMonth >= 9 && numberMonth <= 11)
+    {
+        Console.WriteLine("Осень");
+    }
+    else 
+    {
+        Console.WriteLine("не верный месяц");
+    }
+    switch (numberMonth)
+    {
+        case 1:
+        case 2:
+        case 12:
+            Console.WriteLine("Зима");
+            break;
+        case 3:
+        case 4:
+        case 5:
+            Console.WriteLine("Весна");
+            break;
+        case 6:
+        case 7:
+        case 8:
+            Console.WriteLine("Лето");
+            break;
+        case 9:
+        case 10:
+        case 11:
+            Console.WriteLine("Осень");
+            break;
+        default:
+            Console.WriteLine("Не верное число");
+            break;
+    }
+}
+
 // 9. Пользователь вводит число: 1, 2, 3 или 4. Если это значение ‘2', то вывести в
 // консоль 'зима близко', ‘3' – зима, ‘4' – всё' . Решите задачу через switch-case.
+{
+    Console.WriteLine("Задача номер 9.");
+    Console.WriteLine("Число от 1 до 4: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    string result = number switch
+    {
+        1 => "осень",
+        2 => "зима близко",
+        3 => "зима",
+        4 => "все",
+        _ => "ошибочка"
+    };
+    Console.WriteLine(result);
+}
 
 // 10. Пользователь вводит одно число. Необходимо вывести обратное ему (число
 // является обратным при 1/x). Если при этом введённое с клавиатуры число – ноль,
 // то вывести «Обратного числа не существует».
+{
+    Console.WriteLine("Задача номер 10.");
+    Console.WriteLine("Введите число: ");
+    double number = Convert.ToDouble(Console.ReadLine());
+    string message = !(number == 0) ? $"обратное число 1/{number}" : "обратного числа не существует";
+    Console.WriteLine(message);    
+}
 
 // 11. Напишите программу, которая находит полное число метров по заданному числу
-// сантиметров. Добавить проверку на ввод только чисел
-// 345 -> 3
-// 100 -> 1
+// сантиметров. Добавить проверку на ввод только чисел 345 -> 3 100 -> 1
+
+{
+    Console.WriteLine("номер задачи 11");
+    Console.WriteLine("Введите длинну в сантиметрах ");
+    double distance = Convert.ToInt32(Console.ReadLine());
+    distance = (int) distance/100;
+    string message = distance >= 1 ? $"Метров {distance}" : $"Меньше одного метра";
+    Console.WriteLine(message);
+}
 
 // 12. Напишите программу, в которой рассчитывается сумма и произведение цифр
-// положительного трёхзначного числа
-// 123 -> Сумма цифр = 6 Произведение цифр = 6
+// положительного трёхзначного числа 123 -> Сумма цифр = 6 Произведение цифр = 6
 
 // 13. Пользователь вводит четырехзначное число. Напишите код, который будет
 // выявлять является ли каждое составляющее числа четным либо нечетным.
