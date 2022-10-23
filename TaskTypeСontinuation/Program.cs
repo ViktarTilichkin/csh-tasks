@@ -252,11 +252,18 @@
 {
     Console.WriteLine("Задача номер 10");
     Console.WriteLine("Введите число А для проверки: ");
-    double numberA = Convert.ToDouble(Console.ReadLine());
+    int numberA = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите число B для проверки: ");
-    double numberB = Convert.ToDouble(Console.ReadLine());
+    int numberB = Convert.ToInt32(Console.ReadLine());
+    string message;
     if (numberA == 0 || numberB == 0)
     {
-        string message = numberA > numberB ? $""
+         message = numberA == 0 ? $"{~numberB}" : $"{~numberA}";
     }
+   else if (numberA >=20 || numberB > 0){
+
+   }
+   
+   message = "1";
+    Console.WriteLine(message);
 }
