@@ -82,6 +82,26 @@
     string message5 = number > 0 ? $"В числе {number} количество знаков {result} и оно положительное" : $"В числе {number} количество знаков {result - 1} и оно отрицательно";
     Console.WriteLine(message5);
 }
+{
+    Console.WriteLine("Задача номер 5.");
+    Console.WriteLine("Введите число: ");
+    string? text = Console.ReadLine();
+    if (int.TryParse(text, out int number))
+    {
+    if (number > 0)
+    {
+        Console.WriteLine($"В числе {number} количество знаков {text.Length} и оно положительное");
+    }
+    else
+    {
+        Console.WriteLine($"В числе {number} количество знаков {text.Length - 1} и оно отрицательно");
+    }
+    }
+    else
+    {
+        Console.WriteLine("Введен текст");
+    }
+}
 
 // 6. Найти квадратный корень числа. Если же число без плавающей точки, то просто
 // вывести его. В противном случае необходимо округлить число до целых.
@@ -262,9 +282,36 @@
 {
     Console.WriteLine("Задача номер 15.");
     Console.WriteLine("Введите строку ");
-    string? number = Console.ReadLine();
-    int result = number.Length;
-    Console.WriteLine($"Длинна строки {result}");
+    string? text = Console.ReadLine();
+    if (!int.TryParse(text, out _)) // "_" игнорируем объявление переменной
+    {
+        if (!string.IsNullOrEmpty(text)) //(text != null) "" // string.IsNullOrEmpty(text) првоеряет на пустое значение если пустое то true
+        {
+            Console.WriteLine($"Длинна строки {text.Length}");
+        }
+        else
+        {
+            Console.WriteLine("пустота");
+        }
+    }
+    else
+    {
+        Console.WriteLine("ввели число");
+    }
+}
+{
+    Console.WriteLine("Задача номер 15.");
+    Console.WriteLine("Введите строку ");
+    string? text = Console.ReadLine();
+    if (!int.TryParse(text, out _)) // "_" игнорируем объявление переменной
+    {
+        string message = !string.IsNullOrEmpty(text) ? $"Длинна строки {text.Length}" : "пустота";
+        Console.WriteLine(message);
+    }
+    else
+    {
+        Console.WriteLine("ввели число");
+    }
 }
 
 // 16. Пользователь вводит строку. Вывести первый символ строки (индексы)
