@@ -187,8 +187,68 @@
     }
 }
 // 10. Ввести две строку и произвести сложение данных строк всеми известными способами
+{
+    Console.WriteLine("Задачана №10");
+    Console.WriteLine("Введите строку 1 ");
+    string? input1 = Convert.ToString(Console.ReadLine());
+    Console.WriteLine("Введите строку 2 ");
+    string? input2 = Convert.ToString(Console.ReadLine());
+    string result1 = input1 + input2;
+    input1 += input2;
+    Console.WriteLine($"результат способа 1: {result1}. Результат способа 2: {input1}");
+}
 // 11. Ввести строку до 5 символов, если строка число то вывести для кажкой цифры в числе кратно оно двум либо нет, 
 // то есть 6352 => 6 крастно двум, 3 не кратно двум, 5  не кратно двум, 2  крастно двум (if-else, тернаный оператор)
+{
+    Console.WriteLine("Задачана №11");
+    Console.WriteLine("Введите строку 1 ");
+    string? input1 = Convert.ToString(Console.ReadLine());
+    if (!(input1 == null))
+        if ((input1.Length <= 5) && int.TryParse(input1, out _))
+        {
+            string message = input1[0] % 2 == 0 ? $"{input1[0]} кратно двум" : $"{input1[0]} не кратно двум";
+            string message1 = input1[1] % 2 == 0 ? $"{input1[1]} кратно двум" : $"{input1[1]} не кратно двум";
+            string message2 = input1[2] % 2 == 0 ? $"{input1[2]} кратно двум" : $"{input1[2]} не кратно двум";
+            string message3 = input1[3] % 2 == 0 ? $"{input1[3]} кратно двум" : $"{input1[3]} не кратно двум";
+            Console.WriteLine($"Проверка на кратрность {message} {message1} {message2} {message3}");
+        }
+        else
+        {
+            Console.WriteLine("Слишком длинное число");
+        }
+    else
+    {
+        Console.WriteLine("Пустота");
+    }
+}
 // 12. Ввести две строки, произвести проврку на пустоту, если строки имеют символы то если первая строка больше 
 // второй вывести сумму длин строк, в противном случае разность 2 от первой
 //  (if-else, тернаный оператор, *.Length, string.IsNullorEmpty)
+{
+    Console.WriteLine("Задачана №12");
+    Console.WriteLine("Введите строку 1 ");
+    string? input1 = Convert.ToString(Console.ReadLine());
+    Console.WriteLine("Введите строку 2 ");
+    string? input2 = Convert.ToString(Console.ReadLine());
+    string message;
+    if (!(input2 == null))
+    {
+        if (!(input1 == null))
+        {
+            int lengthA = input1.Length;
+            int lengthB = input2.Length;
+            message = lengthA > lengthB ? $"Сумма {lengthA + lengthB}" : $"Разность {lengthB - lengthA}";
+            Console.WriteLine(message);
+        }
+        else 
+        {
+            Console.WriteLine("Строка один пустота");
+        }
+    }
+    
+    else
+    {
+        Console.WriteLine("Строка два пустота");
+    }
+
+}
