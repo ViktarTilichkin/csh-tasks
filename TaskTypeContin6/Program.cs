@@ -88,14 +88,14 @@
     string? text = Console.ReadLine();
     if (int.TryParse(text, out int number))
     {
-    if (number > 0)
-    {
-        Console.WriteLine($"В числе {number} количество знаков {text.Length} и оно положительное");
-    }
-    else
-    {
-        Console.WriteLine($"В числе {number} количество знаков {text.Length - 1} и оно отрицательно");
-    }
+        if (number > 0)
+        {
+            Console.WriteLine($"В числе {number} количество знаков {text.Length} и оно положительное");
+        }
+        else
+        {
+            Console.WriteLine($"В числе {number} количество знаков {text.Length - 1} и оно отрицательно");
+        }
     }
     else
     {
@@ -269,11 +269,21 @@
 {
     Console.WriteLine("номер задачи 14");
     Console.WriteLine("Введите число от 0 до 10 ");
-    int number1 = Convert.ToInt32(Console.ReadLine());
+    string? text1 = (Console.ReadLine());
     Console.WriteLine("Введите второе число от 0 до 10 ");
-    int number2 = Convert.ToInt32(Console.ReadLine());
-    string message = number1 == 0 ? $"I'm {number2}" : $"I'm {number1}{number2}";
-    Console.WriteLine(message);
+    string? text2 = (Console.ReadLine());
+    if (int.TryParse(text1, out int number1) && int.TryParse(text2, out int number2))
+    {
+        if (number1 >= 0 && number1 <= 10 && number2 >= 0 && number2 <= 10)
+        {
+            string message = number1 == 0 ? $"I'm {number2}" : $"I'm {number1}{number2}";
+            Console.WriteLine(message);
+        }
+        else
+        Console.WriteLine("Не верные числа");
+    }
+    else 
+    Console.WriteLine("Не число");
 }
 
 // 15. Пользователь вводит строку. Необходимо сделать проверку, что это не число и
@@ -320,8 +330,12 @@
     Console.WriteLine("Задача номер 16.");
     Console.WriteLine("Введите строку ");
     string? number = Console.ReadLine();
-    //   string message = number[0];
-    //   Console.WriteLine($"Первый символ строки {message}");
+    if (!(number == null))
+    {
+        Console.WriteLine($"Первый символ строки {number[0]}");
+    }
+    else
+        Console.WriteLine("Введена пустота");
 }
 // 17. Пользователь вводит строку. Необходимо сделать проверку, что это не число и
 // вывести текущую строку в большом регистре
@@ -351,14 +365,22 @@
     Console.WriteLine("Введите строку ");
     string? number = Console.ReadLine();
     string numberTrue = "hschool";
-    int result = string.Compare(number, numberTrue);
-    if (result == 0)
+    if (int.TryParse(number, out int numberA))
     {
-        Console.WriteLine("true");
+        number = numberA % 2 == 0 ? "четное" : "не четное ";
+        Console.WriteLine(number);
     }
     else
     {
-        Console.WriteLine("false");
+        int result = string.Compare(number, numberTrue); // if (number == "hschool") тоже работает 
+        if (result == 0)
+        {
+            Console.WriteLine("true");
+        }
+        else
+        {
+            Console.WriteLine("false");
+        }
     }
 }
 
