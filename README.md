@@ -1,3 +1,2 @@
-# project-name
-my first repository
-my first changed
+# C# Tasks
+my repository for practice
