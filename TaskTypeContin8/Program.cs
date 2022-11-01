@@ -1,220 +1,221 @@
 ﻿// 1.Ввести строку.Если эта равна “hschool”, вывести true. В противном случае false.
 // Добавить проверки для строк. Удалить лишние пробелы
 
-// {
-//     Console.WriteLine("Задача 1");
-//     string? text = Console.ReadLine();
-//     string message = "";
-//     string textTrue = "hschool";
-//     if (!string.IsNullOrEmpty(text))
-//     {
-//         message = text.ToLower().Trim() == textTrue ? "true" : "false";// то ловер если регитры не совпадают. трим удаляет лишние пробелы с переди и зади. 
-//         Console.WriteLine(text.ToLower().Trim() == "hschool");
-//     }
-//     else
-//     {
-//         Console.WriteLine("Пустая строка");
-//     }
-//     Console.WriteLine(message);
-// }
+{
+    Console.WriteLine("Задача 1");
+    string? text = Console.ReadLine();
+    string message = "";
+    string textTrue = "hschool";
+    if (!string.IsNullOrEmpty(text))
+    {
+        message = text.ToLower().Trim() == textTrue ? "true" : "false";// то ловер если регитры не совпадают. трим удаляет лишние пробелы с переди и зади. 
+        Console.WriteLine(text.ToLower().Trim() == "hschool");
+    }
+    else
+    {
+        Console.WriteLine("Пустая строка");
+    }
+    Console.WriteLine(message);
+}
 
 // 2.Ввести строку.Проверить является ли это число или строка. Если число, то
 // выяснить, четное или нет. Если это строка то преобразовать строку в массив, где
 // каждый символ – один элемент массива
 // ‘hschool’ => [‘h’, ‘s’, ‘c’, ‘h’, ‘o’, ‘o’, ‘l’]
 
-// {
-//     Console.WriteLine("Задача 2");
-//     string? text = Console.ReadLine();
-//     if (!string.IsNullOrEmpty(text))
-//     {
-//         if (double.TryParse(text, out double number))
-//         {
-//             Console.WriteLine(number % 2 == 0 ? "четное" : "не четное");
-//         }
-//         else
-//         {
-//             string[] result = text.Split('.');
-//             char[] result = text.ToCharArray();
-//             Console.WriteLine(result.Length);
-//         }
-//     }
-// }
+{
+    Console.WriteLine("Задача 2");
+    string? text = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text))
+    {
+        if (double.TryParse(text, out double number))
+        {
+            Console.WriteLine(number % 2 == 0 ? "четное" : "не четное");
+        }
+        else
+        {
+            string[] result = text.Split('.');
+            char[] resultText = text.ToCharArray();
+            Console.WriteLine(resultText.Length);
+        }
+    }
+}
 
 // 3.Преобразовать строку ‘Full сStaCK DevELoper’ в массив вида [‘full, ‘stack’,
 // ‘developer’]
 
-// {
-//     Console.WriteLine("Задача 3");
-//     string text = "Full сStaCK DevELoper";
-//     text = text.ToLower();
-//     string[] result = text.Split(" ");
-//     Console.WriteLine(result[0]);
-//     Console.WriteLine(result[1]);
-//     Console.WriteLine(result[2]);
-// }
+{
+    Console.WriteLine("Задача 3");
+    string text = "Full сStaCK DevELoper";
+    text = text.ToLower();
+    string[] result = text.Split(" ");
+    Console.WriteLine(result[0]);
+    Console.WriteLine(result[1]);
+    Console.WriteLine(result[2]);
+}
 
 // 4.Ввести строку.Проверить на isNaN. Если число, то ошибка ввода. Если это строка
 // то узнать какая у нее длина. Привести к одному регистру, убрать лишние пробелы
 
-// {
-//     Console.WriteLine("Задача 4");
-//     string? text = Console.ReadLine();
-//     if (!string.IsNullOrEmpty(text))
-//     {
-//         if (!int.TryParse(text, out _))
-//         {
-//             Console.WriteLine($"{text.ToLower().Trim()}, Длинна строки {text.Length}");
-//         }
-//         else
-//         {
-//             Console.WriteLine("ошибка ввода");
-//         }
-//     }
-//     else
-//     {
-//         Console.WriteLine("Пустая строка");
-//     }
-// }
+{
+    Console.WriteLine("Задача 4");
+    string? text = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text))
+    {
+        if (!int.TryParse(text, out _))
+        {
+            Console.WriteLine($"{text.ToLower().Trim()}, Длинна строки {text.Length}");
+        }
+        else
+        {
+            Console.WriteLine("ошибка ввода");
+        }
+    }
+    else
+    {
+        Console.WriteLine("Пустая строка");
+    }
+}
 
 // 5. ‘HTML JavaScript PHP’ преобразовать в "HTML-JAVASCRIPT-PHP"
 
-// {
-//     Console.WriteLine("Задача номер 5");
-//     string text = "HTML JavaScript PHP";
-//     Console.WriteLine(text);
-//     string[] result = text.Split(" ");
-//     Console.WriteLine((string.Join("-", result)).ToUpper());
-// }
+{
+    Console.WriteLine("Задача номер 5");
+    string text = "HTML JavaScript PHP";
+    Console.WriteLine(text);
+    string[] result = text.Split(" ");
+    Console.WriteLine((string.Join("-", result)).ToUpper());
+}
 
 // 6.Ввести строку.Проверить является ли это число или строка. Если число, то
 // ошибка ввода. Если это строка то первый символ поставить в верхний регистр.
 // Убрать лишние пробелы
 
-// {
-//     Console.WriteLine("Задача номер 6");
-//     string? text = Console.ReadLine();
-//     text = text?.Trim();
-//     if (!string.IsNullOrEmpty(text) && !int.TryParse(text, out _))
-//     {
-//         Console.WriteLine(string.Concat(Convert.ToString(text[0]).ToUpper(), text.Remove(0, 1)));
-//     }
-//     else
-//     {
-//         Console.WriteLine("Ошибка ввода");
-//     }
-// }
+{
+    Console.WriteLine("Задача номер 6");
+    string? text = Console.ReadLine();
+    text = text?.Trim();
+    if (!string.IsNullOrEmpty(text) && !int.TryParse(text, out _))
+    {
+        Console.WriteLine(string.Concat(Convert.ToString(text[0]).ToUpper(), text.Remove(0, 1)));
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
 
 // 7.На вход программе подаётся строка. Замените все @ на '!' с помощью    
 // глобального поиска и замены (2 способа)
 
-// {
-//     Console.WriteLine("Задача номер 7");
-//     string? text = Console.ReadLine();
-//     if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
-//     {
-//         string[] result = text.Split("@");
-//         Console.WriteLine((string.Join("!", result)));
-//     }
-//     else
-//     {
-//         Console.WriteLine("ошибка ввода");
-//     }
-// }
+{
+    Console.WriteLine("Задача номер 7");
+    string? text = Console.ReadLine();
+    if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
+    {
+        string[] result = text.Split("@");
+        Console.WriteLine((string.Join("!", result)));
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
 
 // 8. Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb'
 
-// {
-//     Console.WriteLine("Задача номер 8");
-//     string? text = Console.ReadLine();
-//     if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
-//     {
-//         string[] result = text.Split("@");
-//         Console.WriteLine((string.Join("!", result)));
-//     }
-//     else
-//     {
-//         Console.WriteLine("ошибка ввода");
-//     }
-// }
+{
+    Console.WriteLine("Задача номер 8");
+    string? text = Console.ReadLine();
+    if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
+    {
+        string[] result = text.Split("@");
+        Console.WriteLine((string.Join("!", result)));
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
 
 // 9. На вход программе подается переменная date, в котрой лежит дата в формате
 // 'xxxx-xx-xx'. Преобразуйте эту дату в формат 'xx/xx/xxxx’. (reverse)
 
-// {
-//     Console.WriteLine("Задача 9, реверс даты");
-//     Console.WriteLine("Введите дату в формате гггг-мм-дд");
-//     string? date = Console.ReadLine();
-//     if (!string.IsNullOrEmpty(date))
-//     {
-//         string[] dateResult = date.Split("-");
-//         Console.WriteLine(string.Join("/", dateResult[2], dateResult[1], dateResult[0]));
-//     }
-//     else
-//     {
-//         Console.WriteLine("Ошибка ввода");
-//     }
-// }
+{
+    Console.WriteLine("Задача 9, реверс даты");
+    Console.WriteLine("Введите дату в формате гггг-мм-дд");
+    string? date = Console.ReadLine();
+    if (!string.IsNullOrEmpty(date))
+    {
+        string[] dateResult = date.Split("-");
+        Console.WriteLine(string.Join("/", dateResult[2], dateResult[1], dateResult[0]));
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
 
 // 10. Дана строка из 3 слов разделенных пробелом:
 // • Найдите количество символов в этой строке.
 // • Вырежите из нее 2 и 3 слова.
 // • Найдите индекс 2 подстроки
 
-// {
-//     Console.WriteLine("Задача 10");
-//     string text = "  Простая строка задачи ";
-//     Console.WriteLine($"Наша страка: {text}");
-//     text = text.Trim();
-//     int textLong = text.Length;
-//     string[] result = text.Split(" ");
-//     Console.WriteLine($"Количество символов в строке {textLong}. Второй символ троки {text[1]}");
-//     Console.WriteLine(result[0]);
-// }
+{
+    Console.WriteLine("Задача 10");
+    string text = "  Простая строка задачи ";
+    Console.WriteLine($"Наша страка: {text}");
+    text = text.Trim();
+    int textLong = text.Length;
+    string[] result = text.Split(" ");
+    Console.WriteLine($"Количество символов в строке {textLong}. Второй символ троки {text[1]}");
+    Console.WriteLine(result[0]);
+}
 
 // 11. Пользователь вводит дату в формате ‘х-х-х'. Замените все дефисы на '!'
 
-// {
-//     Console.WriteLine("Задача 11");
-//     Console.WriteLine("Введите дату в формате х-х-х ");
-//     string? date = Console.ReadLine();
-//     if (!string.IsNullOrEmpty(date))
-//     {
-//         string[] result = date.Split("-");
-//         Console.WriteLine(string.Join("!", result));
-//     }
-//     else
-//     {
-//         Console.WriteLine("Ошибка ввода");
-//     }
-// }
+{
+    Console.WriteLine("Задача 11");
+    Console.WriteLine("Введите дату в формате х-х-х ");
+    string? date = Console.ReadLine();
+    if (!string.IsNullOrEmpty(date))
+    {
+        string[] result = date.Split("-");
+        Console.WriteLine(string.Join("!", result));
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
 
 // 12. Пользователь вводит дату в формате 'xxxx-xx-xx'. Преобразуйте эту дату в формат
 // 'xx.xx.xxxx'.
 
-// {
-//     Console.WriteLine("Задача 12");
-//     Console.WriteLine("Введите сообщение в формате xxxx-xx-xx ");
-//     string? date = Console.ReadLine();
-//     if (!string.IsNullOrEmpty(date))
-//     {
-//         string[] result = date.Split("-");
-//         Console.WriteLine(string.Join(".", result));
-//     }
-//     else
-//     {
-//         Console.WriteLine("Ошибка ввода");
-//     }
-// }
+{
+    Console.WriteLine("Задача 12");
+    Console.WriteLine("Введите сообщение в формате xxxx-xx-xx ");
+    string? date = Console.ReadLine();
+    if (!string.IsNullOrEmpty(date))
+    {
+        string[] result = date.Split("-");
+        Console.WriteLine(string.Join(".", result));
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
 
 // 13. Дан массив ['я', 'учу', 'javascript', '!']. С помощью метода join преобразуйте массив в
 // строку 'я+учу+javascript+!'.
 
-// {
-//     Console.WriteLine("Задача 13");
-//     string[] array = {"я", "учу", "javascript", "!" };
-//     Console.WriteLine(string.Join("+", array));
-// }
+{
+    Console.WriteLine("Задача 13");
+    string[] array = {"я", "учу", "javascript", "!" };
+    Console.WriteLine(string.Join("+", array));
+}
+
 // 14. Дан массив. Вывести каждый одельный элемент в консоль (for)
 
 {
@@ -223,7 +224,11 @@
     string? text = Console.ReadLine();
     if (!string.IsNullOrEmpty(text))
     {
-        
+        string[] result = text.Split(" ");
+        for (int i = 0; i < text.Length; i++)
+        {
+            Console.WriteLine(result[i]);
+        }
     }
     else
     {
@@ -231,6 +236,7 @@
     }
 
 }
+
 // 15. На вход программе подается строка текста, состоящая из слов, разделенных
 // ровно одним пробелом. Напишите программу, которая подсчитывает количество
 // слов в ней
