@@ -94,15 +94,17 @@
 // {
 //     Console.WriteLine("Задача номер 6");
 //     string? text = Console.ReadLine();
-//     if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
+//     text = text?.Trim();
+//     if (!string.IsNullOrEmpty(text) && !int.TryParse(text, out _))
 //     {
-
+//         Console.WriteLine(string.Concat(Convert.ToString(text[0]).ToUpper(), text.Remove(0, 1)));
 //     }
 //     else
 //     {
 //         Console.WriteLine("Ошибка ввода");
 //     }
 // }
+
 // 7.На вход программе подаётся строка. Замените все @ на '!' с помощью    
 // глобального поиска и замены (2 способа)
 
@@ -138,16 +140,97 @@
 
 // 9. На вход программе подается переменная date, в котрой лежит дата в формате
 // 'xxxx-xx-xx'. Преобразуйте эту дату в формат 'xx/xx/xxxx’. (reverse)
+
+// {
+//     Console.WriteLine("Задача 9, реверс даты");
+//     Console.WriteLine("Введите дату в формате гггг-мм-дд");
+//     string? date = Console.ReadLine();
+//     if (!string.IsNullOrEmpty(date))
+//     {
+//         string[] dateResult = date.Split("-");
+//         Console.WriteLine(string.Join("/", dateResult[2], dateResult[1], dateResult[0]));
+//     }
+//     else
+//     {
+//         Console.WriteLine("Ошибка ввода");
+//     }
+// }
+
 // 10. Дана строка из 3 слов разделенных пробелом:
 // • Найдите количество символов в этой строке.
 // • Вырежите из нее 2 и 3 слова.
 // • Найдите индекс 2 подстроки
+
+// {
+//     Console.WriteLine("Задача 10");
+//     string text = "  Простая строка задачи ";
+//     Console.WriteLine($"Наша страка: {text}");
+//     text = text.Trim();
+//     int textLong = text.Length;
+//     string[] result = text.Split(" ");
+//     Console.WriteLine($"Количество символов в строке {textLong}. Второй символ троки {text[1]}");
+//     Console.WriteLine(result[0]);
+// }
+
 // 11. Пользователь вводит дату в формате ‘х-х-х'. Замените все дефисы на '!'
+
+// {
+//     Console.WriteLine("Задача 11");
+//     Console.WriteLine("Введите дату в формате х-х-х ");
+//     string? date = Console.ReadLine();
+//     if (!string.IsNullOrEmpty(date))
+//     {
+//         string[] result = date.Split("-");
+//         Console.WriteLine(string.Join("!", result));
+//     }
+//     else
+//     {
+//         Console.WriteLine("Ошибка ввода");
+//     }
+// }
+
 // 12. Пользователь вводит дату в формате 'xxxx-xx-xx'. Преобразуйте эту дату в формат
 // 'xx.xx.xxxx'.
+
+// {
+//     Console.WriteLine("Задача 12");
+//     Console.WriteLine("Введите сообщение в формате xxxx-xx-xx ");
+//     string? date = Console.ReadLine();
+//     if (!string.IsNullOrEmpty(date))
+//     {
+//         string[] result = date.Split("-");
+//         Console.WriteLine(string.Join(".", result));
+//     }
+//     else
+//     {
+//         Console.WriteLine("Ошибка ввода");
+//     }
+// }
+
 // 13. Дан массив ['я', 'учу', 'javascript', '!']. С помощью метода join преобразуйте массив в
 // строку 'я+учу+javascript+!'.
+
+// {
+//     Console.WriteLine("Задача 13");
+//     string[] array = {"я", "учу", "javascript", "!" };
+//     Console.WriteLine(string.Join("+", array));
+// }
 // 14. Дан массив. Вывести каждый одельный элемент в консоль (for)
+
+{
+    Console.WriteLine("Задача 14");
+    Console.WriteLine("Введите строку");
+    string? text = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text))
+    {
+        
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+
+}
 // 15. На вход программе подается строка текста, состоящая из слов, разделенных
 // ровно одним пробелом. Напишите программу, которая подсчитывает количество
 // слов в ней
