@@ -212,7 +212,7 @@
 
 {
     Console.WriteLine("Задача 13");
-    string[] array = {"я", "учу", "javascript", "!" };
+    string[] array = { "я", "учу", "javascript", "!" };
     Console.WriteLine(string.Join("+", array));
 }
 
@@ -240,37 +240,207 @@
 // 15. На вход программе подается строка текста, состоящая из слов, разделенных
 // ровно одним пробелом. Напишите программу, которая подсчитывает количество
 // слов в ней
+
+{
+    Console.WriteLine("Задача 15");
+    string? text = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text))
+    {
+        text = text.Trim();
+        string[] result = text.Split(" ");
+        Console.WriteLine($"Количество слов {result.Length}");
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
+
 // 16. Пользователь вводит строку. Необходимо посчитать количество гласных (for)
+
+{
+    Console.WriteLine("Задача 16");
+    Console.WriteLine("Введите текст на английском");
+    string? text = Console.ReadLine();
+    char[] par = {'A', 'E', 'I', 'O', 'U', 'Y'};
+    if (!string.IsNullOrEmpty(text))
+    {
+        text = text.Trim().ToUpper();
+        int result = 0;
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (text[i] == par[0] || text[i] == par[1] || text[i] == par[2] || text[i] == par[3] || text[i] == par[4] || text[i] == par[5] )
+            {
+                result ++;
+            }
+
+        }
+        Console.WriteLine($"Количество гласных {result}");
+
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
+
 // 17. Пользователь вводит строку. Необходимо посчитать количество согласных (for)
+
+{
+    Console.WriteLine("Задача 17");
+    Console.WriteLine("Введите текст на английском");
+    string? text = Console.ReadLine();
+    char[] par = { 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z' };
+    if (!string.IsNullOrEmpty(text))
+    {
+        text = text.Trim().ToUpper();
+        int result = 0;
+        for (int i = 0; i < text.Length; i++)
+        {
+            for (int j = 0; j < 20; j++)
+                if (text[i] == par[j])
+                {
+                    result++;
+                }
+
+        }
+        Console.WriteLine($"Количество согласных {result}");
+
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
+
 // 18. Пользователь вводит строку. Необходимо вывести все гласные отдельной
 // строкой (for)
 // fullstack => ua
+
+{
+    Console.WriteLine("Задача 18");
+    Console.WriteLine("Введите текст на английском");
+    string? text = Console.ReadLine();
+    char[] par = { 'a', 'e', 'y', 'u', 'o', 'i' };
+    if (!string.IsNullOrEmpty(text))
+    {
+        text = text.Trim().ToLower();
+        string result = "";
+        for (int i = 0; i < text.Length; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                if (text[i] == par[j])
+                {
+                    result += text[i];
+                }
+            }
+
+        }
+        Console.WriteLine($" Гласные : {result}");
+
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
+
 // 19. На вход программе подается строка. Преобразуйте первую букву каждого слова
 // строки в верхний регистр (for)
+
+{
+    {
+    Console.WriteLine("Задача 19");
+    Console.WriteLine("Введите строку");
+    string? text = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text))
+    {
+        text = text.Trim();
+        string[] array = text.Split(" ");
+        string result = "";
+        for (int i = 0; i < text.Length; i++)
+        {
+        }
+        Console.WriteLine(result);
+
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
+}
+
 // 20.На вход программе подается строка, где каждое слово заканчивается “_”.
 // Программа должна убрать “_” и первую букву каждого слова (помимо первого),
 // преобразовать в верхний регистр (for)
+
+
 // 21. На вход программе подается строка, состоящая из имени и фамилии человека,
 // разделенных одним пробелом. Напишите программу, которая проверяет, что имя
 // и фамилия начинаются с заглавной буквы.
 // Chris Alan => true
 // chris alan => false
+
+
 // 22. На вход программе подается строка. Напишите программу, которая меняет
 // регистр символов, другими словами замените все строчные символы заглавными
 // и наоборот.
 // Swap Case => sWAP cASE
+
+{
+    Console.WriteLine("Задача 17");
+string? text = Console.ReadLine();
+text = text?.Trim();
+if (!string.IsNullOrEmpty(text))
+{
+    string result = "";
+    for (int i = 0; i < text.Length; i++)
+    {
+        if (char.IsUpper(text[i]))
+        {
+            result += char.ToLower(text[i]).ToString(); 
+        }
+        else if (char.IsLower(text[i]))
+        {
+            result += char.ToUpper(text[i]).ToString();
+        }
+        else
+        {
+            result += text[i].ToString();
+        }
+    }
+
+    System.Console.WriteLine(result);
+}
+else
+{
+    System.Console.WriteLine("Empty string");
+}
+}
+
 // 23. На вход программе подается строка текста. Напишите программу, которая
 // определяет является ли строка хорошей. Текст хороший, если содержит
 // подстроку «хорош» во всевозможных регистрах.
 // я очень хороший текст => true
+
+
 // 24.На вход программе подается строка. Напишите программу, которая подсчитывает
 // количество буквенных символов в нижнем регистре.
 // abcABCD12345 => 3
+
+
+
 // 25. На вход программе подается строка из букв А, Г, Ц, Т. Напишите программу,
 // которая подсчитывает сколько букв
 // АааГГЦЦцТТтттА => А – 4 Г – 2 Ц – 3 Т – 5
+
+
 // 26. На вход программе подается строка текста. Напишите программу, которая
 // проверяет, что строка заканчивается подстрокой .com или .ru. Если
 // заканчивается, то вывести true, в противном случае false
+
+
 // 27. На вход подается url. Если он начинается с http, содержит хотя бы один “/” и
 // заканчивается подстрокой .com или .ru, то вывести true, в противном случае false
