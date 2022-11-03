@@ -262,16 +262,16 @@
     Console.WriteLine("Задача 16");
     Console.WriteLine("Введите текст на английском");
     string? text = Console.ReadLine();
-    char[] par = {'A', 'E', 'I', 'O', 'U', 'Y'};
+    char[] par = { 'A', 'E', 'I', 'O', 'U', 'Y' };
     if (!string.IsNullOrEmpty(text))
     {
         text = text.Trim().ToUpper();
         int result = 0;
         for (int i = 0; i < text.Length; i++)
         {
-            if (text[i] == par[0] || text[i] == par[1] || text[i] == par[2] || text[i] == par[3] || text[i] == par[4] || text[i] == par[5] )
+            if (text[i] == par[0] || text[i] == par[1] || text[i] == par[2] || text[i] == par[3] || text[i] == par[4] || text[i] == par[5])
             {
-                result ++;
+                result++;
             }
 
         }
@@ -298,10 +298,12 @@
         for (int i = 0; i < text.Length; i++)
         {
             for (int j = 0; j < 20; j++)
+            {
                 if (text[i] == par[j])
                 {
                     result++;
                 }
+            }
 
         }
         Console.WriteLine($"Количество согласных {result}");
@@ -351,25 +353,25 @@
 
 {
     {
-    Console.WriteLine("Задача 19");
-    Console.WriteLine("Введите строку");
-    string? text = Console.ReadLine();
-    if (!string.IsNullOrEmpty(text))
-    {
-        text = text.Trim();
-        string[] array = text.Split(" ");
-        string result = "";
-        for (int i = 0; i < text.Length; i++)
+        Console.WriteLine("Задача 19");
+        Console.WriteLine("Введите строку");
+        string? text = Console.ReadLine();
+        if (!string.IsNullOrEmpty(text))
         {
-        }
-        Console.WriteLine(result);
+            text = text.Trim();
+            string[] array = text.Split(" ");
+            string result = "";
+            for (int i = 0; i < text.Length; i++)
+            {
+            }
+            Console.WriteLine(result);
 
+        }
+        else
+        {
+            Console.WriteLine("Ошибка ввода");
+        }
     }
-    else
-    {
-        Console.WriteLine("Ошибка ввода");
-    }
-}
 }
 
 // 20.На вход программе подается строка, где каждое слово заканчивается “_”.
@@ -391,33 +393,33 @@
 
 {
     Console.WriteLine("Задача 17");
-string? text = Console.ReadLine();
-text = text?.Trim();
-if (!string.IsNullOrEmpty(text))
-{
-    string result = "";
-    for (int i = 0; i < text.Length; i++)
+    string? text = Console.ReadLine();
+    text = text?.Trim();
+    if (!string.IsNullOrEmpty(text))
     {
-        if (char.IsUpper(text[i]))
+        string result = "";
+        for (int i = 0; i < text.Length; i++)
         {
-            result += char.ToLower(text[i]).ToString(); 
+            if (char.IsUpper(text[i]))
+            {
+                result += char.ToLower(text[i]).ToString();
+            }
+            else if (char.IsLower(text[i]))
+            {
+                result += char.ToUpper(text[i]).ToString();
+            }
+            else
+            {
+                result += text[i].ToString();
+            }
         }
-        else if (char.IsLower(text[i]))
-        {
-            result += char.ToUpper(text[i]).ToString();
-        }
-        else
-        {
-            result += text[i].ToString();
-        }
-    }
 
-    System.Console.WriteLine(result);
-}
-else
-{
-    System.Console.WriteLine("Empty string");
-}
+        System.Console.WriteLine(result);
+    }
+    else
+    {
+        System.Console.WriteLine("Empty string");
+    }
 }
 
 // 23. На вход программе подается строка текста. Напишите программу, которая
