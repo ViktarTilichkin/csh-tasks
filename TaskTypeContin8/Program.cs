@@ -3,13 +3,13 @@
 
 {
     Console.WriteLine("Задача 1");
-    string? text = Console.ReadLine();
+    string? input = Console.ReadLine();
     string message = "";
-    string textTrue = "hschool";
-    if (!string.IsNullOrEmpty(text))
+    string inputTrue = "hschool";
+    if (!string.IsNullOrEmpty(input))
     {
-        message = text.ToLower().Trim() == textTrue ? "true" : "false";// то ловер если регитры не совпадают. трим удаляет лишние пробелы с переди и зади. 
-        Console.WriteLine(text.ToLower().Trim() == "hschool");
+        message = input.ToLower().Trim() == inputTrue ? "true" : "false";// то ловер если регитры не совпадают. трим удаляет лишние пробелы с переди и зади. 
+        Console.WriteLine(input.ToLower().Trim() == "hschool");
     }
     else
     {
@@ -25,18 +25,18 @@
 
 {
     Console.WriteLine("Задача 2");
-    string? text = Console.ReadLine();
-    if (!string.IsNullOrEmpty(text))
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
     {
-        if (double.TryParse(text, out double number))
+        if (double.TryParse(input, out double number))
         {
             Console.WriteLine(number % 2 == 0 ? "четное" : "не четное");
         }
         else
         {
-            string[] result = text.Split('.');
-            char[] resultText = text.ToCharArray();
-            Console.WriteLine(resultText.Length);
+            string[] result = input.Split('.');
+            char[] resultinput = input.ToCharArray();
+            Console.WriteLine(resultinput.Length);
         }
     }
 }
@@ -46,9 +46,9 @@
 
 {
     Console.WriteLine("Задача 3");
-    string text = "Full сStaCK DevELoper";
-    text = text.ToLower();
-    string[] result = text.Split(" ");
+    string input = "Full сStaCK DevELoper";
+    input = input.ToLower();
+    string[] result = input.Split(" ");
     Console.WriteLine(result[0]);
     Console.WriteLine(result[1]);
     Console.WriteLine(result[2]);
@@ -59,12 +59,12 @@
 
 {
     Console.WriteLine("Задача 4");
-    string? text = Console.ReadLine();
-    if (!string.IsNullOrEmpty(text))
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
     {
-        if (!int.TryParse(text, out _))
+        if (!int.TryParse(input, out _))
         {
-            Console.WriteLine($"{text.ToLower().Trim()}, Длинна строки {text.Length}");
+            Console.WriteLine($"{input.ToLower().Trim()}, Длинна строки {input.Length}");
         }
         else
         {
@@ -81,9 +81,9 @@
 
 {
     Console.WriteLine("Задача номер 5");
-    string text = "HTML JavaScript PHP";
-    Console.WriteLine(text);
-    string[] result = text.Split(" ");
+    string input = "HTML JavaScript PHP";
+    Console.WriteLine(input);
+    string[] result = input.Split(" ");
     Console.WriteLine((string.Join("-", result)).ToUpper());
 }
 
@@ -93,11 +93,11 @@
 
 {
     Console.WriteLine("Задача номер 6");
-    string? text = Console.ReadLine();
-    text = text?.Trim();
-    if (!string.IsNullOrEmpty(text) && !int.TryParse(text, out _))
+    string? input = Console.ReadLine();
+    input = input?.Trim();
+    if (!string.IsNullOrEmpty(input) && !int.TryParse(input, out _))
     {
-        Console.WriteLine(string.Concat(Convert.ToString(text[0]).ToUpper(), text.Remove(0, 1)));
+        Console.WriteLine(string.Concat(Convert.ToString(input[0]).ToUpper(), input.Remove(0, 1)));
     }
     else
     {
@@ -110,10 +110,10 @@
 
 {
     Console.WriteLine("Задача номер 7");
-    string? text = Console.ReadLine();
-    if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
+    string? input = Console.ReadLine();
+    if (!int.TryParse(input, out _) && !string.IsNullOrEmpty(input))
     {
-        string[] result = text.Split("@");
+        string[] result = input.Split("@");
         Console.WriteLine((string.Join("!", result)));
     }
     else
@@ -126,10 +126,10 @@
 
 {
     Console.WriteLine("Задача номер 8");
-    string? text = Console.ReadLine();
-    if (!int.TryParse(text, out _) && !string.IsNullOrEmpty(text))
+    string? input = Console.ReadLine();
+    if (!int.TryParse(input, out _) && !string.IsNullOrEmpty(input))
     {
-        string[] result = text.Split("@");
+        string[] result = input.Split("@");
         Console.WriteLine((string.Join("!", result)));
     }
     else
@@ -163,12 +163,12 @@
 
 {
     Console.WriteLine("Задача 10");
-    string text = "  Простая строка задачи ";
-    Console.WriteLine($"Наша страка: {text}");
-    text = text.Trim();
-    int textLong = text.Length;
-    string[] result = text.Split(" ");
-    Console.WriteLine($"Количество символов в строке {textLong}. Второй символ троки {text[1]}");
+    string input = "  Простая строка задачи ";
+    Console.WriteLine($"Наша страка: {input}");
+    input = input.Trim();
+    int inputLong = input.Length;
+    string[] result = input.Split(" ");
+    Console.WriteLine($"Количество символов в строке {inputLong}. Второй символ троки {input[1]}");
     Console.WriteLine(result[0]);
 }
 
@@ -221,11 +221,11 @@
 {
     Console.WriteLine("Задача 14");
     Console.WriteLine("Введите строку");
-    string? text = Console.ReadLine();
-    if (!string.IsNullOrEmpty(text))
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
     {
-        string[] result = text.Split(" ");
-        for (int i = 0; i < text.Length; i++)
+        string[] result = input.Split(" ");
+        for (int i = 0; i < input.Length; i++)
         {
             Console.WriteLine(result[i]);
         }
@@ -243,11 +243,11 @@
 
 {
     Console.WriteLine("Задача 15");
-    string? text = Console.ReadLine();
-    if (!string.IsNullOrEmpty(text))
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
     {
-        text = text.Trim();
-        string[] result = text.Split(" ");
+        input = input.Trim();
+        string[] result = input.Split(" ");
         Console.WriteLine($"Количество слов {result.Length}");
     }
     else
@@ -261,15 +261,15 @@
 {
     Console.WriteLine("Задача 16");
     Console.WriteLine("Введите текст на английском");
-    string? text = Console.ReadLine();
+    string? input = Console.ReadLine();
     char[] par = { 'A', 'E', 'I', 'O', 'U', 'Y' };
-    if (!string.IsNullOrEmpty(text))
+    if (!string.IsNullOrEmpty(input))
     {
-        text = text.Trim().ToUpper();
+        input = input.Trim().ToUpper();
         int result = 0;
-        for (int i = 0; i < text.Length; i++)
+        for (int i = 0; i < input.Length; i++)
         {
-            if (text[i] == par[0] || text[i] == par[1] || text[i] == par[2] || text[i] == par[3] || text[i] == par[4] || text[i] == par[5])
+            if (input[i] == par[0] || input[i] == par[1] || input[i] == par[2] || input[i] == par[3] || input[i] == par[4] || input[i] == par[5])
             {
                 result++;
             }
@@ -289,17 +289,17 @@
 {
     Console.WriteLine("Задача 17");
     Console.WriteLine("Введите текст на английском");
-    string? text = Console.ReadLine();
+    string? input = Console.ReadLine();
     char[] par = { 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z' };
-    if (!string.IsNullOrEmpty(text))
+    if (!string.IsNullOrEmpty(input))
     {
-        text = text.Trim().ToUpper();
+        input = input.Trim().ToUpper();
         int result = 0;
-        for (int i = 0; i < text.Length; i++)
+        for (int i = 0; i < input.Length; i++)
         {
             for (int j = 0; j < 20; j++)
             {
-                if (text[i] == par[j])
+                if (input[i] == par[j])
                 {
                     result++;
                 }
@@ -322,19 +322,19 @@
 {
     Console.WriteLine("Задача 18");
     Console.WriteLine("Введите текст на английском");
-    string? text = Console.ReadLine();
+    string? input = Console.ReadLine();
     char[] par = { 'a', 'e', 'y', 'u', 'o', 'i' };
-    if (!string.IsNullOrEmpty(text))
+    if (!string.IsNullOrEmpty(input))
     {
-        text = text.Trim().ToLower();
+        input = input.Trim().ToLower();
         string result = "";
-        for (int i = 0; i < text.Length; i++)
+        for (int i = 0; i < input.Length; i++)
         {
             for (int j = 0; j < 6; j++)
             {
-                if (text[i] == par[j])
+                if (input[i] == par[j])
                 {
-                    result += text[i];
+                    result += input[i];
                 }
             }
 
@@ -355,13 +355,13 @@
     {
         Console.WriteLine("Задача 19");
         Console.WriteLine("Введите строку");
-        string? text = Console.ReadLine();
-        if (!string.IsNullOrEmpty(text))
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
         {
-            text = text.Trim();
-            string[] array = text.Split(" ");
+            input = input.Trim();
+            string[] array = input.Split(" ");
             string result = "";
-            for (int i = 0; i < text.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
             }
             Console.WriteLine(result);
@@ -378,6 +378,29 @@
 // Программа должна убрать “_” и первую букву каждого слова (помимо первого),
 // преобразовать в верхний регистр (for)
 
+{
+    Console.WriteLine("Задача 20");
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
+    {
+        input = input.Trim();
+        string intrvalArray = string.Join("", input.Split(" "));
+        Console.WriteLine(intrvalArray);
+        string[] array = intrvalArray.Split("_");
+        string result = array[0];
+        for (int i = 1; i < array.Length; i++)
+        {
+            string text = array[i].ToString();
+            result += text.Remove(0, 1);
+        }
+        Console.WriteLine(result.ToUpper());
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
+
 
 // 21. На вход программе подается строка, состоящая из имени и фамилии человека,
 // разделенных одним пробелом. Напишите программу, которая проверяет, что имя
@@ -385,6 +408,28 @@
 // Chris Alan => true
 // chris alan => false
 
+{
+    Console.WriteLine("Задача 21");
+    Console.Write("Введите имя и фамилию ");
+    string? input = Console.ReadLine();
+    string message = "";
+    if (!string.IsNullOrEmpty(input))
+    {
+        input = input.Trim();
+        string[] result = input.Split(" ");
+        if (result.Length == 2)
+        {
+            string word1 = result[0];
+            string word2 = result[1];
+            message = Char.IsUpper(word1[0]) == true && Char.IsUpper(word2[0]) == true ? "True" : "False";
+        }
+        Console.WriteLine(message);
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
 
 // 22. На вход программе подается строка. Напишите программу, которая меняет
 // регистр символов, другими словами замените все строчные символы заглавными
@@ -392,25 +437,25 @@
 // Swap Case => sWAP cASE
 
 {
-    Console.WriteLine("Задача 17");
-    string? text = Console.ReadLine();
-    text = text?.Trim();
-    if (!string.IsNullOrEmpty(text))
+    Console.WriteLine("Задача 22");
+    string? input = Console.ReadLine();
+    input = input?.Trim();
+    if (!string.IsNullOrEmpty(input))
     {
         string result = "";
-        for (int i = 0; i < text.Length; i++)
+        for (int i = 0; i < input.Length; i++)
         {
-            if (char.IsUpper(text[i]))
+            if (char.IsUpper(input[i]))
             {
-                result += char.ToLower(text[i]).ToString();
+                result += char.ToLower(input[i]).ToString();
             }
-            else if (char.IsLower(text[i]))
+            else if (char.IsLower(input[i]))
             {
-                result += char.ToUpper(text[i]).ToString();
+                result += char.ToUpper(input[i]).ToString();
             }
             else
             {
-                result += text[i].ToString();
+                result += input[i].ToString();
             }
         }
 
@@ -427,22 +472,114 @@
 // подстроку «хорош» во всевозможных регистрах.
 // я очень хороший текст => true
 
+{
+    Console.WriteLine("Задача 23");
+    Console.Write("Введите строку, для проверки на хорош он или нет: ");
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
+    {
+        input = input.Trim().ToLower();
+        Console.WriteLine(input.Contains("хорош"));
+    }
+}
 
 // 24.На вход программе подается строка. Напишите программу, которая подсчитывает
 // количество буквенных символов в нижнем регистре.
 // abcABCD12345 => 3
 
-
+{
+    Console.WriteLine("Задача 24");
+    Console.Write("введите текст для проверки: ");
+    string? input = Console.ReadLine();
+    int result = 0;
+    if (!string.IsNullOrEmpty(input))
+    {
+        for (int i = 0; i < input.Length; i++)
+        {
+            result += Char.IsLower(input[i]) ? 1 : 0;
+        }
+        Console.WriteLine($"Символов нижнего регистра: {result}");
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
 
 // 25. На вход программе подается строка из букв А, Г, Ц, Т. Напишите программу,
 // которая подсчитывает сколько букв
 // АааГГЦЦцТТтттА => А – 4 Г – 2 Ц – 3 Т – 5
 
+{
+    Console.WriteLine("Задача 25");
+    Console.Write("Введите строку ");
+    string? text = Console.ReadLine();
+    int numberA = 0, numberG = 0, numberC = 0, numberT = 0;
+    if (!string.IsNullOrEmpty(text))
+    {
+        text = text.ToUpper();
+        for (int i = 0; i < text.Length; i++)
+            switch (text[i])
+            {
+                case 'А':
+                    numberA++;
+                    break;
+                case 'Г':
+                    numberG++;
+                    break;
+                case 'Ц':
+                    numberC++;
+                    break;
+                case 'Т':
+                    numberT++;
+                    break;
+
+            }
+        Console.WriteLine($"Букв А {numberA}, Букв Г {numberG}, Букв Ц {numberC}, букв Т {numberT}");
+    }
+}
 
 // 26. На вход программе подается строка текста. Напишите программу, которая
 // проверяет, что строка заканчивается подстрокой .com или .ru. Если
 // заканчивается, то вывести true, в противном случае false
 
+{
+    Console.WriteLine("Задача 26");
+    Console.Write("Введите  имеил или инетрнет адрес ");
+    string? text = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text))
+    {
+        string message = text.EndsWith(".com") || text.EndsWith(".ru") ? "True" : "False";
+        Console.WriteLine(message);
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
+
 
 // 27. На вход подается url. Если он начинается с http, содержит хотя бы один “/” и
 // заканчивается подстрокой .com или .ru, то вывести true, в противном случае false
+
+{
+    Console.WriteLine("Задача 27");
+    Console.Write("Попробуйте написать url:  ");
+    string? url = Console.ReadLine();
+    if (!string.IsNullOrEmpty(url))
+    {
+        url = url.Trim();
+        if (url.StartsWith("http") && url[4] == '/' && (url.EndsWith(".com") || url.EndsWith(".ru")))
+        {
+            Console.WriteLine("true");
+        }
+        else
+        {
+            Console.WriteLine("Ошибочка");
+        }
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
