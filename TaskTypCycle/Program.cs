@@ -76,18 +76,82 @@
 
 // 5. Выведите столбец четных чисел в промежутке от 0 до 100 (for)
 
+{
+    Console.WriteLine("Задача 5");
+    for (int i = 0; i < 101; i++)
+    {
+        if (i % 2 == 0)
+            Console.WriteLine(i);
+    }
+}
+
 // 6. С помощью цикла while найдите сумму чисел от 1 до 100.
+
+{
+    Console.WriteLine("Задача 6");
+    int number = 0;
+    int result = 0;
+    while (number < 100)
+    {
+        number += 1;
+        result += number;
+    }
+    Console.WriteLine(result);
+}
 
 // 7. Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла foreach in найдите сумму
 // элементов этого массива
 
+{
+    Console.WriteLine("Задача 7");
+    int[] number = { 1, 2, 3, 4, 5 };
+    int result = 0;
+    foreach (int numbers in number)
+    {
+        result += numbers;
+    }
+    Console.WriteLine(result);
+}
+
 // 8. Дан массив 2, 5, 9, 15, 0, 4. Выведите все числа кратные 3 циклом foreach in
+
+{
+    Console.WriteLine("задача 8");
+    int[] number = { 2, 5, 9, 15, 0, 4 };
+    foreach (int result in number)
+    {
+        if (result % 3 == 0 && result != 0)
+            Console.WriteLine(result);
+    }
+}
 
 // 9. Дан массив с элементами [1, 2, 2, 3, 4, 4, 3, 4, 5]. Выведите только уникальные
 // значения массива -> [1, 5] (for)
 
+{
+    Console.WriteLine("Задача 9");
+    int[] number = { 1, 2, 2, 3, 4, 4, 3, 4, 5 };
+    for (int i = 0; i < number.Length; i++)
+    {
+
+    }
+}
+
 // 10. Дан массив 2, 5, 9, 15, 0, 4. Выведите все числа кратные 5 циклом while
 
+{
+    Console.WriteLine("задача 10");
+    int[] number = { 2, 5, 9, 15, 0, 4 };
+    int i = 0;
+    while (i < number.Length)
+    {
+        if (number[i] % 5 == 0 && number[i] != 0)
+        {
+            Console.WriteLine(number[i]);
+        }
+        i++;
+    }
+}
 // 11. Дан массив с числами. Числа могут быть положительными и отрицательными.
 // Найдите сумму всех положительных элементов массива циклом foreach in
 
