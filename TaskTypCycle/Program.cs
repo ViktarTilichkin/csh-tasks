@@ -131,10 +131,35 @@
 {
     Console.WriteLine("Задача 9");
     int[] number = { 1, 2, 2, 3, 4, 4, 3, 4, 5 };
+    int number1 = 0, number2 = 0, number3 = 0, number4 = 0, number5 = 0;
+    string result = "Уникальные числа ";
     for (int i = 0; i < number.Length; i++)
     {
-
+        switch (number[i])
+        {
+            case 1:
+                number1++;
+                break;
+            case 2:
+                number2++;
+                break;
+            case 3:
+                number3++;
+                break;
+            case 4:
+                number4++;
+                break;
+            case 5:
+                number5++;
+                break;
+        }
     }
+    result += number1 == 1 ? " число 1 уникально" : "";
+    result += number2 == 1 ? " число 2 уникально" : "";
+    result += number3 == 1 ? " число 3 уникально" : "";
+    result += number4 == 1 ? " число 4 уникально" : "";
+    result += number5 == 1 ? " число 5 уникально" : "";
+    Console.WriteLine(result);
 }
 
 // 10. Дан массив 2, 5, 9, 15, 0, 4. Выведите все числа кратные 5 циклом while
@@ -154,6 +179,29 @@
 }
 // 11. Дан массив с числами. Числа могут быть положительными и отрицательными.
 // Найдите сумму всех положительных элементов массива циклом foreach in
+
+{
+    Console.WriteLine("задача 11");
+    Console.Write("Введите массив чисел  ");
+    string? number = Console.ReadLine();
+    int result = 0;
+    if (!string.IsNullOrEmpty(number))
+    {
+        string[] numbers = number.Split(" ");
+        foreach (string items in numbers)
+        {
+            if (int.TryParse(items, out int numberA))
+            {
+                Console.WriteLine(numberA);
+                if (numberA > 0)
+                {
+                    result += numberA;
+                }
+            }
+        }
+    }
+    Console.WriteLine(result);
+}
 
 // 12. Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только
 // те числа из массива, которые начинаются на цифру 1, 2 или 5 -> 10, 20, 50, 235
