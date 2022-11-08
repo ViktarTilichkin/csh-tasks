@@ -206,17 +206,110 @@
 // 12. Дан массив числами, например: [10, 20, 30, 50, 235, 3000]. Выведите на экран только
 // те числа из массива, которые начинаются на цифру 1, 2 или 5 -> 10, 20, 50, 235
 
+{
+    Console.WriteLine("Задача 12");
+    int[] numbers = { 10, 20, 30, 50, 235, 3000, 121, 258, 354, 684, 845, 149 };
+    string result = "";
+    for (int i = 0; i < numbers.Length; i++)
+    {
+
+    }
+}
+
 // 13. Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку
 // '-1-2-3-4-5-6-7-8-9-‘
 
+{
+    Console.WriteLine("Задача 13");
+    int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    string result = "";
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        result += "-" + numbers[i];
+    }
+    Console.WriteLine(result);
+}
+
 // 14. Дано число 7, найдите все числа кратные 7 до 100
+
+{
+    Console.WriteLine("задача 14");
+    string result = "";
+    for (int i = 0; i < 100; i++)
+    {
+        if (i % 7 == 0)
+        {
+            result += i + ", ";
+        }
+    }
+    Console.WriteLine(result.Remove(result.Length - 2));
+}
 
 // 15. Дано предложение и количество раз которое его надо повторить. Напишите
 // программу, которая повторяет данное предложение нужное количество раз.
 
+{
+    Console.WriteLine("Задача 15");
+    Console.WriteLine("Введите строку");
+    string? input1 = Console.ReadLine();
+    Console.WriteLine("Введите число повтрений");
+    int input2 = Convert.ToInt32(Console.ReadLine());
+    string result = "";
+    if (!string.IsNullOrEmpty(input1))
+    {
+        for (int i = 1; i < input2 + 1; i++)
+        {
+            result += input1 + " ";
+        }
+        Console.WriteLine(result);
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
+}
+
 // 16. Пользователь вводит число, явдяющееся количеством элементов будущего
 // массива и выбирает тип данных массива. Напишите код заполнения массива
 // выбранным типом данных.
+
+{
+    Console.WriteLine("Задача 16");
+    Console.WriteLine("Введите длинну массива");
+    int index = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите тип массива int или string");
+    string? array = Console.ReadLine();
+    if (!string.IsNullOrEmpty(array))
+    {
+        int[] numbers = { };
+        string[] text = { };
+        if (array == "string")
+        {
+            for (int i = 0; i < index + 1; i++)
+            {
+                text[i] += "default";
+            }
+            Console.WriteLine(string.Join(",", text));
+        }
+        else if (array == "int")
+        {
+            for (int i = 0; i < index + 1; i++)
+            {
+                numbers[i] += new Random().Next(0, 1000);
+            }
+            Console.WriteLine(string.Join(",", numbers));
+        }
+        else
+        {
+            Console.WriteLine("Ошибка ввода типа массива");
+        }
+
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
 
 // 17. Пользователь вводит число, явдяющееся количеством элементов будущего
 // массива. Напишите код заполнения массива. Записать в массив только числа.
