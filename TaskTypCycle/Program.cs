@@ -208,12 +208,28 @@
 
 {
     Console.WriteLine("Задача 12");
-    int[] numbers = { 10, 20, 30, 50, 235, 3000, 121, 258, 354, 684, 845, 149 };
+    string[] numbers = { "10", "20", "30", "50", "235", "3000", "121", "258", "354", "684", "845", "149" };
     string result = "";
-    for (int i = 0; i < numbers.Length; i++)
+    foreach (string number in numbers)
     {
-
+        if (number.StartsWith("1"))
+        {
+            result += number + ", ";
+        }
+        else if (number.StartsWith("2"))
+        {
+            result += number + ", ";
+        }
+        else if (number.StartsWith("5"))
+        {
+            result += number + ", ";
+        }
+        else
+        {
+            continue;
+        }
     }
+    Console.WriteLine(result);
 }
 
 // 13. Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку
@@ -321,7 +337,7 @@
     int index = Convert.ToInt32(Console.ReadLine());
     int i = 0;
     int[] numbers = new int[i];
-    while ( i < index)
+    while (i < index)
     {
         numbers[i] += new Random().Next(0, 100);
         i++;
@@ -333,3 +349,36 @@
 // между двумя нечетными числами. Работать с числом как с массивом.
 // Использовать for
 // 55639217 -> 5:563:921:7.
+
+{
+    Console.WriteLine("Задача 18");
+    Console.WriteLine("введиче число");
+    string? input1 = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input1))
+    {
+        int i = 100000;
+        string[] result = new string[i];
+        for (i = 0; i < input1.Length; i++)
+        {
+            Console.WriteLine(i + 10000);
+            if (i == (input1.Length - 1))
+            {
+                result[i] += input1[i];
+                break;
+            }
+            else if (input1[i] % 2 != 0 && input1[i + 1] % 2 != 0)
+            {
+                result[i] += input1[i] + ":";
+            }
+            else
+            {
+                result[i] += input1[i];
+            }
+        }
+        Console.WriteLine(string.Join("", result));
+    }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+}
