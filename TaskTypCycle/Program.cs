@@ -281,11 +281,12 @@
     string? array = Console.ReadLine();
     if (!string.IsNullOrEmpty(array))
     {
-        int[] numbers = { };
-        string[] text = { };
+        int[] numbers = new int[index];
+        string[] text = new string[index];
+        int i = 0;
         if (array == "string")
         {
-            for (int i = 0; i < index + 1; i++)
+            for (i = 0; i < index; i++)
             {
                 text[i] += "default";
             }
@@ -293,7 +294,7 @@
         }
         else if (array == "int")
         {
-            for (int i = 0; i < index + 1; i++)
+            for (i = 0; i < index; i++)
             {
                 numbers[i] += new Random().Next(0, 1000);
             }
@@ -313,6 +314,20 @@
 
 // 17. Пользователь вводит число, явдяющееся количеством элементов будущего
 // массива. Напишите код заполнения массива. Записать в массив только числа.
+
+{
+    Console.WriteLine("Задача 17");
+    Console.WriteLine("введите длинну массива");
+    int index = Convert.ToInt32(Console.ReadLine());
+    int i = 0;
+    int[] numbers = new int[i];
+    while ( i < index)
+    {
+        numbers[i] += new Random().Next(0, 100);
+        i++;
+    }
+    Console.WriteLine(string.Join(", ", numbers));
+}
 
 // 18. Пользователь вводит многозначное число. Необходимо вставить двоеточие
 // между двумя нечетными числами. Работать с числом как с массивом.
