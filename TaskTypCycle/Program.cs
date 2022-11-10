@@ -382,3 +382,25 @@
         Console.WriteLine("Ошибка ввода");
     }
 }
+
+string? consoleText = Console.ReadLine();
+consoleText = consoleText?.Trim();
+if (long.TryParse(consoleText, out _))
+{
+    char[] arrayChars = consoleText.ToCharArray();
+    string result = arrayChars[0].ToString();
+    for (int i = 1; i < arrayChars.Length; i++)
+    {
+        int prevNumber = int.Parse(Convert.ToString(arrayChars[i - 1]));
+        int currentNumber = int.Parse(arrayChars[i].ToString());
+        // if (prevNumber % 2 == 1 && currentNumber % 2 == 1)
+        // {
+        //     result += ":";
+        // }
+        // result += arrayChars[i];
+     
+
+        result += prevNumber % 2 == 1 && currentNumber % 2 == 1 ? $":{arrayChars[i]}" : arrayChars[i];
+    }
+    Console.WriteLine(result);
+}

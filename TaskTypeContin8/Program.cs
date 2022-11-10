@@ -352,26 +352,28 @@
 // строки в верхний регистр (for)
 
 {
-    {
-        Console.WriteLine("Задача 19");
-        Console.WriteLine("Введите строку");
-        string? input = Console.ReadLine();
-        if (!string.IsNullOrEmpty(input))
-        {
-            input = input.Trim();
-            string[] array = input.Split(" ");
-            string result = "";
-            for (int i = 0; i < input.Length; i++)
-            {
-            }
-            Console.WriteLine(result);
 
-        }
-        else
+    Console.WriteLine("Задача 19");
+    Console.WriteLine("Введите строку");
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
+    {
+        input = input.Trim();
+        string[] array = input.Split(" ");
+        string result = "";
+        for (int i = 0; i < array.Length; i++)
         {
-            Console.WriteLine("Ошибка ввода");
+            Console.WriteLine(i);
+            string text = array[i];
+            result += Char.ToUpper(text[0]) + text.Remove(0, 1) + " ";
         }
+        Console.WriteLine(result);
     }
+    else
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
+
 }
 
 // 20.На вход программе подается строка, где каждое слово заканчивается “_”.
