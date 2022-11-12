@@ -61,15 +61,16 @@
 }
 
 // 4. Выведите столбец чисел от 11 до 33 циклом while
+
 {
     for (int i = 11; i <= 33; i++)
     {
         Console.WriteLine(i);
     }
     int number = 11;
-    while (number < 33)
+    while (number < 34)
     {
-        Console.WriteLine(++number);
+        Console.WriteLine(number++);
     }
 
 }
@@ -78,10 +79,9 @@
 
 {
     Console.WriteLine("Задача 5");
-    for (int i = 0; i < 101; i++)
+    for (int i = 2; i < 101; i += 2)
     {
-        if (i % 2 == 0)
-            Console.WriteLine(i);
+        Console.WriteLine(i); 
     }
 }
 
@@ -398,7 +398,7 @@ if (long.TryParse(consoleText, out _))
         //     result += ":";
         // }
         // result += arrayChars[i];
-     
+
 
         result += prevNumber % 2 == 1 && currentNumber % 2 == 1 ? $":{arrayChars[i]}" : arrayChars[i];
     }

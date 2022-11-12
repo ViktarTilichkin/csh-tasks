@@ -66,8 +66,15 @@
     Console.WriteLine("Задача 4. ");
     Console.WriteLine("Введите данные для проверки на число: ");
     var number = Console.ReadLine();
+    if (!string.IsNullOrEmpty(number))
+    {
     bool result = Char.IsDigit(number, 3);
     Console.WriteLine(result);
+    }
+    else 
+    {
+        Console.WriteLine("Ошибка ввода");
+    }
 }
 
 // 5. Пользователь вводит число с клавиатуры. Нужно вывести на экран сколько в этом
@@ -344,7 +351,14 @@
     Console.WriteLine("Задача номер 17.");
     Console.WriteLine("Введите строку ");
     string? number = Console.ReadLine();
+    if (!string.IsNullOrEmpty(number))
+    {
     Console.WriteLine(number.ToUpper());
+    }
+    else
+    {
+        Console.WriteLine("ошибка ввода");
+    }
 }
 
 // 18. Пользователь вводит строку. Необходимо повторить ее трижды

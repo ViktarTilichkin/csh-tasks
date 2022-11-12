@@ -8,7 +8,7 @@
     string inputTrue = "hschool";
     if (!string.IsNullOrEmpty(input))
     {
-        message = input.ToLower().Trim() == inputTrue ? "true" : "false";// то ловер если регитры не совпадают. трим удаляет лишние пробелы с переди и зади. 
+        message = input.ToLower().Trim() == inputTrue ? "true" : "false";
         Console.WriteLine(input.ToLower().Trim() == "hschool");
     }
     else
