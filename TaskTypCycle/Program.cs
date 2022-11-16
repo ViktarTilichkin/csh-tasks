@@ -243,6 +243,7 @@
     {
         result += "-" + numbers[i];
     }
+    result += "-";
     Console.WriteLine(result);
 }
 
@@ -336,7 +337,7 @@
     Console.WriteLine("введите длинну массива");
     int index = Convert.ToInt32(Console.ReadLine());
     int i = 0;
-    int[] numbers = new int[i];
+    int[] numbers = new int[index];
     while (i < index)
     {
         numbers[i] += new Random().Next(0, 100);
