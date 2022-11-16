@@ -64,6 +64,24 @@
 // 3. Пользователь вводит символ. Записать все позиции данного данного символа в строке в
 // массив и вывести через символ, который кажет пользователь.
 
+{
+    Console.WriteLine("Задача 3");
+    Console.WriteLine("Введите строку");
+    string? text = Console.ReadLine();
+    Console.WriteLine("Какой символ будем искать?");
+    string? symbol = Console.ReadLine();
+    if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(symbol))
+    {
+        string[] symbolNumbers = new string[text.Length];
+        
+    }
+    else
+    {
+        Console.WriteLine("error input");
+    }
+
+}
+
 
 // 4. Пользователь вводит число N, которое является индексом последнего элемента ряда
 // Фиббоначи. Вывести весь этот ряд записанный в массив.
