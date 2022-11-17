@@ -72,8 +72,17 @@
     string? symbol = Console.ReadLine();
     if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(symbol))
     {
-        string[] symbolNumbers = new string[text.Length];
-        
+        string[] symbolNumbers = new string[j];
+        int j = 0;
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (string.Equals(symbol, text[i].ToString()))
+            {
+                symbolNumbers[j] += i.ToString();
+                j++;
+            }
+        }
+        Console.WriteLine(string.Join(", ", symbolNumbers));
     }
     else
     {
@@ -82,9 +91,26 @@
 
 }
 
-
 // 4. Пользователь вводит число N, которое является индексом последнего элемента ряда
 // Фиббоначи. Вывести весь этот ряд записанный в массив.
+
+{
+    Console.WriteLine("задача 4");
+    Console.WriteLine("Введите индекс числа фибонначи:  ");
+    string? input = Console.ReadLine();
+    if (int.TryParse(input, out int number))
+    {
+        int[] result = new Int32[number];
+        for (int i = 0; i < number; i++)
+        {
+
+        }
+    }
+    else
+    {
+        Console.WriteLine("error");
+    }
+}
 
 
 // 5. У пользователя есть строка, удалить из неё все числа и символы ‘.’, ‘-’, ‘,’ , ‘*’ и тд. Заменить
