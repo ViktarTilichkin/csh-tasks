@@ -102,7 +102,8 @@
     {
         int[] result = new Int32[number];
         for (int i = 0; i < number; i++)
-        {
+        {   
+            result = Array.Copy()
 
         }
     }
