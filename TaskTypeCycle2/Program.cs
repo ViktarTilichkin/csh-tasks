@@ -72,8 +72,8 @@
     string? symbol = Console.ReadLine();
     if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(symbol))
     {
-        string[] symbolNumbers = new string[j];
         int j = 0;
+        string[] symbolNumbers = new string[j];
         for (int i = 0; i < text.Length; i++)
         {
             if (string.Equals(symbol, text[i].ToString()))
@@ -94,18 +94,22 @@
 // 4. Пользователь вводит число N, которое является индексом последнего элемента ряда
 // Фиббоначи. Вывести весь этот ряд записанный в массив.
 
+
 {
     Console.WriteLine("задача 4");
     Console.WriteLine("Введите индекс числа фибонначи:  ");
     string? input = Console.ReadLine();
     if (int.TryParse(input, out int number))
     {
-        int[] result = new Int32[number];
-        for (int i = 0; i < number; i++)
-        {   
-            result = Array.Copy()
-
+        int[] result = new int[3];
+        result[0] = 0;
+        result[1] = 1;
+        result[2] = 1;
+        for (int i = 3; i < number; i++)
+        {
+            result[i] = result[i - 1] + result[i - 2];
         }
+        Console.WriteLine(string.Join(", ", result));
     }
     else
     {
