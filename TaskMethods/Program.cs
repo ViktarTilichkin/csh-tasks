@@ -18,7 +18,8 @@ internal class Program
         // Task1();
         // Task2();
         // Task3();
-        Task4();
+        // Task4();
+        Task5();
     }
 
 
@@ -105,16 +106,15 @@ internal class Program
     }
     static bool MethodInputInt(string[] text)
     {
-        bool result = true;
         foreach (string item in text)
         {
-            if (!int.TryParse(item, out _))
+            if (!decimal.TryParse(item, out _))
             {
-                result = false;
-                break;
+                return false;
             }
         }
-        return result;
+        return true;
+
     }
 
     #endregion
@@ -122,17 +122,94 @@ internal class Program
     // 5. На входе n – количество элементов массива (вводится с клавиатуры). Далее
     // производится заполнение массива с слуйчными числами. Реализуйте два метода
     // для поиска минимального и максимального значения.
+
+    static void Task5()
+    {
+        Console.WriteLine("введите длинну массива");
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out int numberindex))
+        {
+            double[] numbers = new double[numberindex];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = new Random().Next(-100, 100);
+            }
+            Console.WriteLine(string.Join(",", numbers));
+            Console.WriteLine(MethodMinNumber(numbers));
+            Console.WriteLine(MethodMaxNumber(numbers));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+
+    static double MethodMinNumber(double[] number)
+    {
+        double numberMin = number[0];
+        for (int i = 0; i < number.Length; i++)
+        {
+            if (numberMin > number[i])
+            {
+                numberMin = number[i];
+            }
+        }
+        return numberMin;
+    }
+    static double MethodMaxNumber(double[] number)
+    {
+        double numberMax = number[0];
+        for (int i = 0; i < number.Length; i++)
+        {
+            if (numberMax < number[i])
+            {
+                numberMax = number[i];
+            }
+        }
+        return numberMax;
+    }
+
+
     #endregion
     #region Задача 6 
     // 6. На входе n – количество элементов массива (вводится с клавиатуры). Далее
     // производится заполнение массива с слуйчными числами. Реализуйте методы
-    // подсчета количества элементов массива меньше и больш среднего значения.
+    // подсчета и вывода количества элементов массива меньше и больш среднего значения.
+    
+    static void Task6()
+    {
+        Console.WriteLine("введите длинну массива");
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out int numberindex))
+        {
+            double[] numbers = new double[numberindex];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = new Random().Next(-100, 100);
+            }
+            Console.WriteLine(string.Join(",", numbers));
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+
+
     #endregion
     #region Задача 7
     // 7. На входе массив. Реализуйте 2 метода. Первый для проверки, что в массиве
     // только числа. Второй для получения суммы всех элементов массива. Если
     // результат метода проверки – true, то вызывать новый метод, возвращающий
     // сумму всех элементов массива
+    static void Task7()
+    {
+        Console.WriteLine("Задача 7");
+        string? input = Console.ReadLine;
+    }
+
     #endregion
     #region Задача 8
     // 8. На входе массив. Реализуйте 2 метода. Первый для проверки, что в массиве

@@ -101,11 +101,10 @@
     string? input = Console.ReadLine();
     if (int.TryParse(input, out int number))
     {
-        int[] result = new int[3];
+        int[] result = new int[2];
         result[0] = 0;
         result[1] = 1;
-        result[2] = 1;
-        for (int i = 3; i < number; i++)
+        for (int i = 2; i < number; i++)
         {
             result[i] = result[i - 1] + result[i - 2];
         }
@@ -125,7 +124,25 @@
 // ПриветМир, я Пишу код*который не ВсегдаХороший)Но я?Учусь и у Меня?Все получится
 // привет-мир/я/-пишу/кодкоторый/не/-всегда-хороший-но/я?-учусь=и=у=-менявсе=получится
 
+{
+    Console.WriteLine("Задача 5");
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
+    {
+        string[] result = new string[0];
+        foreach (char item in input)
+        {
+            if (Char.IsLetter(item))
+            {
 
+            }
+        }
+    }
+    else
+    {
+        Console.WriteLine("error");
+    }
+}
 // 6. Праработать 7 раздличных методов char и описать через коментарий, что делает данный
 // метод, его входные параметры и выходные данные
 
