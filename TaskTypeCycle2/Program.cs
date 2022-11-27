@@ -126,26 +126,81 @@
 
 {
     Console.WriteLine("Задача 5");
-    string? input = Console.ReadLine();
+    string input = "ПриветМир, я Пишу код*который не ВсегдаХороший)Но я?Учусь и у Меня?Все получится";
     if (!string.IsNullOrEmpty(input))
     {
-        string[] result = new string[0];
+        string result = "";
+        bool symbolSearch = true;
+        bool symbolFirst = true;
         foreach (char item in input)
         {
-            if (Char.IsLetter(item))
+            if (char.IsUpper(item) && symbolFirst)
             {
-
+                result += char.ToLower(item);
+                symbolFirst = false;
+            }
+            else if (char.IsUpper(item) && !symbolFirst)
+            {
+                result += char.ToLower(item);
+                symbolFirst = false;
+            }
+            else if (char.IsLetter(item))
+            {
+                result += item;
+            }
+            else if (item.Equals(' ') && symbolSearch)
+            {
+                result += '/';
+            }
+            else if (item.Equals('?') && symbolSearch)
+            {
+                result += item;
+                symbolSearch = false;
+            }
+            else if (item.Equals(' ') && !symbolSearch)
+            {
+                result += '=';
             }
         }
+        Console.WriteLine(result);
     }
     else
     {
         Console.WriteLine("error");
     }
 }
+
 // 6. Праработать 7 раздличных методов char и описать через коментарий, что делает данный
 // метод, его входные параметры и выходные данные
+
+{
+    Console.WriteLine("Задача 6");
+    char test = 'G';
+    char testSecond = '5';
+    Console.WriteLine(char.IsDigit(testSecond));
+    Console.WriteLine(char.IsLetter(test));
+    Console.WriteLine(char.IsUpper(test));
+    Console.WriteLine(char.IsWhiteSpace(test));
+    Console.WriteLine(char.ToLower(test));
+    Console.WriteLine(test.Equals(testSecond));
+    Console.WriteLine(char.GetUnicodeCategory(testSecond));
+}
 
 
 // 7. Праработать 10 раздличных методов string и описать через коментарий, что делает данный
 // метод, его входные параметры и выходные данные
+
+{
+    Console.WriteLine("Задача 7");
+    string test = "Hello world";
+    string testSecond = "   My name   ";
+    Console.WriteLine(string.Concat(test, testSecond));
+    Console.WriteLine(string.Format("first message - {0}, second message - {1}", test, testSecond));
+    Console.WriteLine(string.Join(";", test.Split(" "), testSecond.Split(" ")));
+    Console.WriteLine(string.IsNullOrEmpty(test));
+    Console.WriteLine(test.Equals(testSecond));
+    Console.WriteLine(testSecond.Length);
+    Console.WriteLine(test.Contains(testSecond));
+    Console.WriteLine(testSecond.ToUpper());
+    Console.WriteLine(testSecond.Trim());
+}

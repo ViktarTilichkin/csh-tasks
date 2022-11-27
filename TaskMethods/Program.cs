@@ -19,7 +19,9 @@ internal class Program
         // Task2();
         // Task3();
         // Task4();
-        Task5();
+        // Task5();
+        // Task6();
+        Task7();
     }
 
 
@@ -176,8 +178,9 @@ internal class Program
     // производится заполнение массива с слуйчными числами. Реализуйте методы
     // подсчета и вывода количества элементов массива меньше и больш среднего значения.
     
-    static void Task6()
+     static void Task6()
     {
+        Console.WriteLine("Задача");
         Console.WriteLine("введите длинну массива");
         string? input = Console.ReadLine();
         if (int.TryParse(input, out int numberindex))
@@ -187,16 +190,49 @@ internal class Program
             {
                 numbers[i] = new Random().Next(-100, 100);
             }
+            double arraySumm = 0;
+            double arrayMean = arraySumm / numbers.Length;
+            foreach (double item in numbers)
+            {
+                arraySumm += item;
+            }
             Console.WriteLine(string.Join(",", numbers));
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(string.Join(", ", MethodMeanMin(numbers, arrayMean)));
+            Console.WriteLine(string.Join(", ", MethodMeanMax(numbers, arrayMean)));
         }
         else
         {
             Console.WriteLine("error");
         }
     }
-
+    static double[] MethodMeanMin(double[] input, double arrayMean)
+    {
+        int i = 0;
+        double[] result = new double[i];
+        foreach (double item in input)
+        {
+            if (item < arrayMean)
+            {
+                result[i] = item;
+                i++;
+            }
+        }
+        return result;
+    }
+    static double[] MethodMeanMax(double[] input, double arrayMean)
+    {
+        int i = 0;
+        double[] result = new double[i];
+        foreach (double item in input)
+        {
+            if (item > arrayMean)
+            {
+                result[i] = item;
+                i++;
+            }
+        }
+        return result;
+    }
 
     #endregion
     #region Задача 7
@@ -207,7 +243,28 @@ internal class Program
     static void Task7()
     {
         Console.WriteLine("Задача 7");
-        string? input = Console.ReadLine;
+        Console.WriteLine("Введите массив чисел");
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
+        {
+           string[] array = input.Split(" ");
+            if (MethodInputInt(array))
+            {
+                double[] number = new double[array.Length];
+                Array.Copy(array , number, array.Length);
+                Console.WriteLine(MethodSummArray(number));
+            }
+        }
+
+    }
+    static double MethodSummArray(double[] input)
+    {
+        double result = 0;
+        foreach (double item in input)
+        {
+            result += item;
+        }
+        return result;
     }
 
     #endregion
