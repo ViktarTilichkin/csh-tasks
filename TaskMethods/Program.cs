@@ -21,7 +21,8 @@ internal class Program
         // Task4();
         // Task5();
         // Task6();
-        Task7();
+        // Task7();
+        Task8();
     }
 
 
@@ -106,7 +107,7 @@ internal class Program
         Console.WriteLine(string.Join(", ", input));
         Console.WriteLine(MethodInputInt(input));
     }
-    static bool MethodInputInt(string[] text)
+    static bool MethodInputInt(params object[] text)
     {
         foreach (string item in text)
         {
@@ -116,7 +117,6 @@ internal class Program
             }
         }
         return true;
-
     }
 
     #endregion
@@ -177,8 +177,8 @@ internal class Program
     // 6. На входе n – количество элементов массива (вводится с клавиатуры). Далее
     // производится заполнение массива с слуйчными числами. Реализуйте методы
     // подсчета и вывода количества элементов массива меньше и больш среднего значения.
-    
-     static void Task6()
+
+    static void Task6()
     {
         Console.WriteLine("Задача");
         Console.WriteLine("введите длинну массива");
@@ -243,24 +243,66 @@ internal class Program
     static void Task7()
     {
         Console.WriteLine("Задача 7");
-        Console.WriteLine("Введите массив чисел");
-        string? input = Console.ReadLine();
-        if (!string.IsNullOrEmpty(input))
+        object[] input = { "5", "12", "213", "14" };
+        Console.WriteLine(string.Join(", ", input));
+        if (MethodInputInt(input))
         {
-           string[] array = input.Split(" ");
-            if (MethodInputInt(array))
-            {
-                double[] number = new double[array.Length];
-                Array.Copy(array , number, array.Length);
-                Console.WriteLine(MethodSummArray(number));
-            }
+            Console.WriteLine(MethodSummArray(input));
         }
-
+        else
+        {
+            Console.WriteLine("array has not numbers");
+        }
     }
-    static double MethodSummArray(double[] input)
+    static double MethodSummArray(object[] input)
     {
         double result = 0;
-        foreach (double item in input)
+        foreach (object item in input)
+        {
+            double number = Convert.ToDouble(item);
+            result += number;
+
+        }
+        return result;
+    }
+    #endregion
+    #region Задача 8
+    // 8. На входе массив. Реализуйте 2 метода. Первый для проверки, что в массиве
+    // только строки. Второй для получения суммы всех строчных элементов массива.
+    // Если результат метода проверки – true, то вызывать новый метод, возвращающую
+    // конкатенацию всех строчных элементов массива
+    static void Task8()
+    {
+        Console.WriteLine("Задача 7");
+        object[] input = { "HE", "LLO", "LITL", "PROG666", 23};
+        Console.WriteLine(string.Join(", ", input));
+        foreach (object item in input)
+        {
+            if (item is not decimal number) 
+            {
+                Console.WriteLine("hi");
+            }
+        }
+        if (MethodInputString(input))
+        {
+            Console.WriteLine(SummArray(input));
+        }
+    }
+    static bool MethodInputString(params object[] input)
+    {
+        foreach (string item in input)
+        {
+            if (!decimal.TryParse(item, out _))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    static string SummArray(params object[] input)
+    {
+        string result = "";
+        foreach (string item in input)
         {
             result += item;
         }
@@ -268,24 +310,46 @@ internal class Program
     }
 
     #endregion
-    #region Задача 8
-    // 8. На входе массив. Реализуйте 2 метода. Первый для проверки, что в массиве
-    // только строки. Второй для получения суммы всех строчных элементов массива.
-    // Если результат метода проверки – true, то вызывать новый метод, возвращающую
-    // конкатенацию всех строчных элементов массива
-    #endregion
     #region Задача 9
     // 9. На входе 2 массива, размерность которых вводится с клавиатуры, а значения
     // заполняются случайными числами. Реализуйте 2 метода. Первый что массивы
     // имеют одинаковую размерность и все элементы отличаются. Второй произвести
     // поэлементное умножение. Если результат метода проверки – true, то вызывать
     // новый метод, возвращающий вывод элементов через запятую
+    static void Task9()
+    {
+        Console.WriteLine("Задача 9");
+        Console.WriteLine("Введите числа");
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
+        {
+            if (MethodInputInt(input))
+            {
+                Console.WriteLine(true);
+            }
+        }
+
+    }
     #endregion
     #region Задача 10
     // 10. На входе массив. Реализуйте 2 метода. Первый для проверки, что в массиве
     // только числа. Второй для получения только четных элементов массива. Если
     // результат метода проверки – true, то вызывать новую метод, возвращающий
     // массив с четными элементами массива
+    static void Task10()
+    {
+        Console.WriteLine("Задача 10");
+        Console.WriteLine("Введите числа");
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
+        {
+            if (MethodInputInt(input))
+            {
+                Console.WriteLine(true);
+            }
+        }
+
+    }
     #endregion
     #region Задача 11
     // 11. На входе число. Необходимо создать метод, возвращающий факториал числа.
