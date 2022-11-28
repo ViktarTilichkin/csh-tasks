@@ -22,7 +22,11 @@ internal class Program
         // Task5();
         // Task6();
         // Task7();
-        Task8();
+        // Task8();
+        // Task9();
+        // Task10();
+        // Task11();
+        Task12();
     }
 
 
@@ -274,38 +278,37 @@ internal class Program
     static void Task8()
     {
         Console.WriteLine("Задача 7");
-        object[] input = { "HE", "LLO", "LITL", "PROG666", 23};
-        Console.WriteLine(string.Join(", ", input));
-        foreach (object item in input)
-        {
-            if (item is not decimal number) 
-            {
-                Console.WriteLine("hi");
-            }
-        }
+        object[] input = { "HE", "LLO", "LITL", "PROG666" };
+        Console.WriteLine(string.Join(" ", input));
         if (MethodInputString(input))
         {
-            Console.WriteLine(SummArray(input));
+            Console.WriteLine(CustomJoin(input));
+        }
+        else
+        {
+            Console.WriteLine("array contains numbers");
         }
     }
     static bool MethodInputString(params object[] input)
     {
-        foreach (string item in input)
+        foreach (object item in input)
         {
-            if (!decimal.TryParse(item, out _))
+            if (decimal.TryParse(item.ToString(), out _))
             {
                 return false;
             }
         }
         return true;
     }
-    static string SummArray(params object[] input)
+    static string CustomJoin(object[] input, string symbol = ", ")
     {
         string result = "";
-        foreach (string item in input)
+        for (int i = 0; i < input.Length; i++)
         {
-            result += item;
+            string? text = input[i].ToString();
+            result += text + symbol;
         }
+        result = result.Remove(result.Length - 2, 2);
         return result;
     }
 
@@ -319,17 +322,79 @@ internal class Program
     static void Task9()
     {
         Console.WriteLine("Задача 9");
-        Console.WriteLine("Введите числа");
+        Console.WriteLine("Введите длинну первого массива");
         string? input = Console.ReadLine();
-        if (!string.IsNullOrEmpty(input))
+        Console.WriteLine("Введите длинну второго массива");
+        string? input2 = Console.ReadLine();
+        if (int.TryParse(input, out int LengthFirst) && int.TryParse(input2, out int LengthSecond))
         {
-            if (MethodInputInt(input))
+            int[] arrayFirst = new int[LengthFirst];
+            int[] arraySecond = new int[LengthSecond];
+            for (int i = 0; i < LengthFirst; i++)
             {
-                Console.WriteLine(true);
+                arrayFirst[i] = new Random().Next(10, 12);
             }
+            for (int i = 0; i < LengthSecond; i++)
+            {
+                arraySecond[i] = new Random().Next(15, 20);
+            }
+            Console.WriteLine(string.Join(", ", arrayFirst));
+            Console.WriteLine(string.Join(", ", arraySecond));
+            if (EqualLengthArray(arrayFirst, arraySecond))
+            {
+                Console.WriteLine(CustomJoinInt(arrayFirst, "! "));
+                Console.WriteLine(CustomJoinInt(arraySecond, "% "));
+            }
+            else
+            {
+                Console.WriteLine(string.Format("Multiplication arrayFist {0}", MultiplicationNumbres(arrayFirst)));
+                Console.WriteLine(string.Format("Multiplication arraySecond {0}", MultiplicationNumbres(arraySecond)));
+            }
+        }
+        else
+        {
+            Console.WriteLine("Entered not a number");
         }
 
     }
+    static bool EqualLengthArray(int[] array1, int[] array2)
+    {
+        if (array1.Length == array2.Length)
+        {
+            for (int i = 0; i < array1.Length; i++)
+            {
+                if (array1[i] == array2[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    static int MultiplicationNumbres(params int[] array)
+    {
+        int result = 1;
+        foreach (int item in array)
+        {
+            result = result * item;
+        }
+        return result;
+    }
+    static string CustomJoinInt(int[] input, string symbol = ", ")
+    {
+        string result = "";
+        foreach (int item in input)
+        {
+            result += item.ToString() + symbol;
+        }
+        result.Remove(result.Length - 3, 2);
+        return result;
+    }
+
     #endregion
     #region Задача 10
     // 10. На входе массив. Реализуйте 2 метода. Первый для проверки, что в массиве
@@ -338,26 +403,87 @@ internal class Program
     // массив с четными элементами массива
     static void Task10()
     {
-        Console.WriteLine("Задача 10");
-        Console.WriteLine("Введите числа");
-        string? input = Console.ReadLine();
-        if (!string.IsNullOrEmpty(input))
-        {
-            if (MethodInputInt(input))
-            {
-                Console.WriteLine(true);
-            }
-        }
+        // Console.WriteLine("Задача 7");
+        // object[] input = { "12", "11", "14", "9" };
+        // Console.WriteLine(string.Join(" ", input));
+        // if (MethodInputInt(input))
+        // {
+        //     double[] test = new double[input.Length];
+        //     Array.Copy(input, test, input.Length);
+        //     Console.WriteLine(string.Join(", ", test));
+        //     Console.WriteLine(EvenNumbers(input));
+        // }
+        // else
+        // {
+        //     Console.WriteLine("array contains numbers");
+        // }
+    }
 
+    static double[] EvenNumbers(object[] input)
+    {
+        double[] result = { 11, 12 };
+        return result;
     }
     #endregion
     #region Задача 11
     // 11. На входе число. Необходимо создать метод, возвращающий факториал числа.
     // Пример фактериала 4! = 1 * 2 * 3 * 4
+    static void Task11()
+    {
+        Console.WriteLine("Задача 11");
+        Console.WriteLine("Введите число");
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out int number))
+        {
+            Console.WriteLine(Factorial(number));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static int Factorial(int number)
+    {
+        int result = 1;
+        for (int i = 1; i <= number; i++)
+        {
+            result *= i;
+        }
+        return result;
+    }
+
     #endregion
     #region Задача 12
     // 12. На входе строка. Необходимо создать метод, возвращающий true, если это слово
     // палиндром и false в противном случае
+
+    static void Task12()
+    {
+        Console.WriteLine("Задача 12");
+        Console.WriteLine("Введите слово");
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
+        {
+            Console.WriteLine(MetPalindrom(input));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static bool MetPalindrom(string text)
+    {
+        string result = "";
+        for (int i = text.Length - 1; 0 <= i; i--)
+        {
+            result += text[i];
+        }
+        if (result.Equals(text))
+        {
+            return true;
+        }
+        return false;
+    }
     #endregion
     #region Задача 13
     // 13. На входе строка. Необходимо создать метод, возвращающий true, если это слово
