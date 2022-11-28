@@ -15,18 +15,21 @@ internal class Program
 
     static void Main(string[] args)
     {
-        // Task1();
-        // Task2();
-        // Task3();
-        // Task4();
-        // Task5();
-        // Task6();
-        // Task7();
-        // Task8();
-        // Task9();
-        // Task10();
-        // Task11();
+        Task1();
+        Task2();
+        Task3();
+        Task4();
+        Task5();
+        Task6();
+        Task7();
+        Task8();
+        Task9();
+        Task10();
+        Task11();
         Task12();
+        Task13();
+        Task14();
+        Task15();
     }
 
 
@@ -403,25 +406,33 @@ internal class Program
     // массив с четными элементами массива
     static void Task10()
     {
-        // Console.WriteLine("Задача 7");
-        // object[] input = { "12", "11", "14", "9" };
-        // Console.WriteLine(string.Join(" ", input));
-        // if (MethodInputInt(input))
-        // {
-        //     double[] test = new double[input.Length];
-        //     Array.Copy(input, test, input.Length);
-        //     Console.WriteLine(string.Join(", ", test));
-        //     Console.WriteLine(EvenNumbers(input));
-        // }
-        // else
-        // {
-        //     Console.WriteLine("array contains numbers");
-        // }
+        Console.WriteLine("Задача 7");
+        string[] input = { "12", "11", "14", "9" };
+        Console.WriteLine(string.Join(" ", input));
+        if (MethodInputInt(input))
+        {
+            Console.WriteLine(string.Join(", ", EvenNumbers(input)));
+        }
+        else
+        {
+            Console.WriteLine("array contains numbers");
+        }
     }
 
-    static double[] EvenNumbers(object[] input)
+    static double[] EvenNumbers(string[] input)
     {
-        double[] result = { 11, 12 };
+        double[] result = new double[0];
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (Convert.ToDouble(input[i]) % 2 == 0)
+            {
+                int Length = result.Length;
+                double[] array = new double[Length + 1];
+                Array.Copy(result, array, Length);
+                array[Length] = Convert.ToDouble(input[i]);
+                result = array;
+            }
+        }
         return result;
     }
     #endregion
@@ -488,12 +499,99 @@ internal class Program
     #region Задача 13
     // 13. На входе строка. Необходимо создать метод, возвращающий true, если это слово
     // анаграмма и false в противном случае
+
+    static void Task13()
+    {
+        Console.WriteLine("Задача 13");
+        Console.WriteLine("Введите слово");
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
+        {
+            Console.WriteLine(MetAnagram(input));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static bool MetAnagram(string text)
+    {
+
+        return false;
+    }
     #endregion
     #region Задача 14
     // 14. Реализовать метод возвращающий разность между НОК и НОД для двух чисел
+    static void Task14()
+    {
+        Console.WriteLine("Задача 14");
+        Console.WriteLine("Число");
+        string? input = Console.ReadLine();
+        Console.WriteLine("Число");
+        string? inputSecond = Console.ReadLine();
+        if (int.TryParse(input, out int numberA) && int.TryParse(inputSecond, out int numberB))
+        {
+            Console.WriteLine(MethodNOKNOD(numberA, numberB));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static int MethodNOKNOD(int numberA, int numberB)
+    {
+        int NOD = 1;
+        int NOK = 1;
+        int minNumber = numberA > numberB ? numberB : numberA;
+        int maxNumber = numberA * numberB;
+        for (int i = 1; i <= minNumber; i++)
+        {
+            if (numberA % i == 0 && numberB % i == 0)
+            {
+                NOD = i;
+            }
+        }
+        for (int i = 1; i <= maxNumber; i++)
+        {
+            if (i % numberA == 0 && i % numberB == 0)
+            {
+                NOK = i;
+                break;
+            }
+        }
+        Console.WriteLine($"NOD - {NOD}");
+        Console.WriteLine($"NOK - {NOK}");
+        return NOK - NOD;
+    }
+
     #endregion
     #region Задача 15
-    // 15. Реазуйте методы перевода чисел из десятичной системы счисления в 2-ую и 16-
-    // ую
+    // 15. Реазуйте методы перевода чисел из десятичной системы счисления в 2-ую и 16-ую
+    static void Task15()
+    {
+        Console.WriteLine("Задача 15");
+        Console.WriteLine("Введите число");
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out int number))
+        {
+            Console.WriteLine();
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static string MethodConvertBinary(int number)
+    {
+        string result = "";
+
+
+        return result;
+    }
+    static bool MethodConvert16numsys(int number)
+    {
+
+        return false;
+    }
     #endregion
 }
