@@ -87,9 +87,9 @@ internal class Program
     static void Task3()
     {
         string[] text = { "by", "belarus", "de", "ru", "germany" };
-        Console.WriteLine(string.Join(",", MethodReplace(text)));
+        Console.WriteLine(string.Join(",", MethodFilter(text)));
     }
-    static string[] MethodReplace(string[] text)
+    static string[] MethodFilter(string[] text)
     {
         string[] result = new string[100];
         int i = 0;

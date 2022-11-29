@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMethods", "TaskMethods\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTypeMethods2", "TaskTypeMethods2\TaskTypeMethods2.csproj", "{5E998755-F197-4E0F-9248-BFF9F1027923}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTypeMethod3", "TaskTypeMethod3\TaskTypeMethod3.csproj", "{558EF72A-ABB6-4641-9981-8E9911C44FF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,9 @@ Global
 		{5E998755-F197-4E0F-9248-BFF9F1027923}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E998755-F197-4E0F-9248-BFF9F1027923}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E998755-F197-4E0F-9248-BFF9F1027923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{558EF72A-ABB6-4641-9981-8E9911C44FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558EF72A-ABB6-4641-9981-8E9911C44FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558EF72A-ABB6-4641-9981-8E9911C44FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558EF72A-ABB6-4641-9981-8E9911C44FF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
