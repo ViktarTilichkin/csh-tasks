@@ -109,6 +109,14 @@
             result[i] = result[i - 1] + result[i - 2];
         }
         Console.WriteLine(string.Join(", ", result));
+        int number0 = 0;
+        int number1 = 1;
+        for (int i = 2; i < number; i++)
+        {
+            int sum = number0 + number1;
+            number0 = number1;
+            number1 = sum;
+        }
     }
     else
     {
