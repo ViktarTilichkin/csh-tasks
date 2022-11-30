@@ -6,6 +6,7 @@ internal class Program
     {
         // Task1();
         Task2();
+        Task3();
     }
 
 
@@ -26,6 +27,7 @@ internal class Program
     // }
 
     #endregion
+
     #region Задача 2
     // 2. Написать метод, который проверяет является ли введнная строка почтовым
     // адрессом и возвращающий домен почты.(out)
@@ -88,15 +90,47 @@ internal class Program
     }
 
     #endregion
+
     #region Задача 3
     // 3. Написать метод, который удаляет из строки заданный символ. Символ является
     // входным параметром-значением. Строка должна быть параметром-ссылкой и
     // результатом. (ref)
+    static void Task3()
+    {
+        Console.WriteLine("Task 3");
+        Console.WriteLine("Enter the string");
+        string? text = Console.ReadLine();
+        Console.WriteLine("Enter the symbol");
+        string? symbol = Console.ReadLine();
+        if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(symbol))
+        {
+            string result = CustomReplace(ref text, symbol);
+            Console.WriteLine(result);
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static string CustomReplace(ref string text, string symbol)
+    {
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (text[i].ToString() != symbol)
+            {
+                text += text[i];
+            }
+        }
+        return text;
+    }
+
     #endregion
 
     #region Задача 4
     // 4. Написать метод выполняющий сложение парметов, если параметры одного типа
     // данных возвращать true и результат сложение, в противном случае false (out)
+    
     #endregion
 
     #region Задача 5
