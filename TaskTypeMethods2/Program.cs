@@ -6,7 +6,7 @@ internal class Program
     {
         // Task1();
         Task2();
-        Task3();
+        // Task3();
     }
 
 
@@ -104,25 +104,25 @@ internal class Program
         string? symbol = Console.ReadLine();
         if (!string.IsNullOrEmpty(text) && !string.IsNullOrEmpty(symbol))
         {
-            string result = CustomReplace(ref text, symbol);
-            Console.WriteLine(result);
+            CustomReplace(ref text, symbol);
+            Console.WriteLine(text);
         }
         else
         {
             Console.WriteLine("error");
         }
     }
-    static string CustomReplace(ref string text, string symbol)
+    static void CustomReplace(ref string text, string symbol)
     {
-
+        string text11 = "";
         for (int i = 0; i < text.Length; i++)
         {
             if (text[i].ToString() != symbol)
             {
-                text += text[i];
+                text11 += text[i];
             }
         }
-        return text;
+        text = text11;
     }
 
     #endregion

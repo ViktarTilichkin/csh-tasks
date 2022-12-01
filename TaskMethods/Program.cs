@@ -15,20 +15,20 @@ internal class Program
 
     static void Main(string[] args)
     {
-        Task1();
-        Task2();
-        Task3();
-        Task4();
-        Task5();
-        Task6();
-        Task7();
-        Task8();
-        Task9();
-        Task10();
-        Task11();
-        Task12();
-        Task13();
-        Task14();
+        // Task1();
+        // Task2();
+        // Task3();
+        // Task4();
+        // Task5();
+        // Task6();
+        // Task7();
+        // Task8();
+        // Task9();
+        // Task10();
+        // Task11();
+        // Task12();
+        // Task13();
+        // Task14();
         Task15();
     }
 
@@ -574,24 +574,23 @@ internal class Program
         string? input = Console.ReadLine();
         if (int.TryParse(input, out int number))
         {
-            Console.WriteLine();
+            Console.WriteLine(MethodConvertNumbers(number, 16));
         }
         else
         {
             Console.WriteLine("error");
         }
     }
-    static string MethodConvertBinary(int number)
+    static string MethodConvertNumbers(int number, int Type)
     {
         string result = "";
-
-
-        return result;
-    }
-    static bool MethodConvert16numsys(int number)
-    {
-
-        return false;
+        object[] array16 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F" };
+        while (number >= 1)
+        {
+            result += array16[number % Type];
+            number = number / Type;
+        }
+        return new string(result.Reverse().ToArray());
     }
     #endregion
 }

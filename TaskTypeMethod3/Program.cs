@@ -14,12 +14,14 @@ internal class Program
         int number1 = 10;
         int number2 = 22;
         string? opr = Console.ReadLine();
-
+        if (!string.IsNullOrEmpty(opr))
+        {
         System.Console.WriteLine(Switch(opr: opr, number1: number1, number2: number2));
-        // System.Console.WriteLine(MethodSum(number1, number2));
-        // System.Console.WriteLine(MethodDeference(number1, number2));
-        // System.Console.WriteLine(MethodMultiplication(number1, number2));
-        // System.Console.WriteLine(MethodDivision(number1, number2));
+        }
+        else 
+        {
+            Console.WriteLine("error");
+        }
     }
 
     static int MethodSum(int number, int number1) => number + number1;
