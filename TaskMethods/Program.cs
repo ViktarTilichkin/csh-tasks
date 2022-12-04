@@ -15,20 +15,20 @@ internal class Program
 
     static void Main(string[] args)
     {
-        // Task1();
-        // Task2();
-        // Task3();
-        // Task4();
-        // Task5();
-        // Task6();
-        // Task7();
-        // Task8();
-        // Task9();
-        // Task10();
-        // Task11();
-        // Task12();
-        // Task13();
-        // Task14();
+        Task1();
+        Task2();
+        Task3();
+        Task4();
+        Task5();
+        Task6();
+        Task7();
+        Task8();
+        Task9();
+        Task10();
+        Task11();
+        Task12();
+        Task13();
+        Task14();
         Task15();
     }
 
@@ -505,19 +505,43 @@ internal class Program
         Console.WriteLine("Задача 13");
         Console.WriteLine("Введите слово");
         string? input = Console.ReadLine();
-        if (!string.IsNullOrEmpty(input))
+        Console.WriteLine("Введите слово");
+        string? input2 = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(input2))
         {
-            Console.WriteLine(MetAnagram(input));
+            Console.WriteLine(MetAnagram(input, input2));
         }
         else
         {
             Console.WriteLine("error");
         }
     }
-    static bool MetAnagram(string text)
+    static bool MetAnagram(string textFirst, string textSecond)
     {
-
-        return false;
+        bool result = false;
+        textFirst.Trim().ToLower();
+        textSecond.Trim().ToLower();
+        string[] arrayFirst = textFirst.Split(" ");
+        string[] arraySecond = textSecond.Split(" ");
+        string arrayResult = "";
+        foreach (string itemFirst in arrayFirst)
+        {
+            foreach (string itemSecond in arraySecond)
+            {
+                string[] arrayTempFirst = { "pila" };
+                string[] arrayTempSecond = { "lipa" };
+                Array.Sort(arrayTempFirst);
+                Array.Sort(arrayTempSecond);
+                Console.WriteLine(string.Join(" ", arrayTempFirst));
+                Console.WriteLine(string.Join(" ", arrayTempSecond));
+                if (arrayTempFirst.Equals(arrayTempSecond))
+                {
+                    arrayResult += $"слова {itemFirst} {itemSecond} анаграммы";
+                    result = true;
+                }
+            }
+        }
+        return result;
     }
     #endregion
     #region Задача 14
@@ -572,9 +596,11 @@ internal class Program
         Console.WriteLine("Задача 15");
         Console.WriteLine("Введите число");
         string? input = Console.ReadLine();
-        if (int.TryParse(input, out int number))
+        Console.WriteLine("Введите систему счисления:");
+        string? input2 = Console.ReadLine();
+        if (int.TryParse(input, out int number) && int.TryParse(input2, out int numberSys))
         {
-            Console.WriteLine(MethodConvertNumbers(number, 16));
+            Console.WriteLine(MethodConvertNumbers(number, numberSys));
         }
         else
         {
