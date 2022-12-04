@@ -521,25 +521,15 @@ internal class Program
         bool result = false;
         textFirst.Trim().ToLower();
         textSecond.Trim().ToLower();
-        string[] arrayFirst = textFirst.Split(" ");
-        string[] arraySecond = textSecond.Split(" ");
-        string arrayResult = "";
-        foreach (string itemFirst in arrayFirst)
+        char[] arrayFirst = textFirst.ToCharArray();
+        char[] arraySecond = textSecond.ToCharArray();
+        Array.Sort(arrayFirst);
+        Array.Sort(arraySecond);
+        string TempFirst = string.Join("", arrayFirst);
+        string TempSecond = string.Join("", arraySecond);
+        if (TempSecond.Equals(TempSecond))
         {
-            foreach (string itemSecond in arraySecond)
-            {
-                string[] arrayTempFirst = { "pila" };
-                string[] arrayTempSecond = { "lipa" };
-                Array.Sort(arrayTempFirst);
-                Array.Sort(arrayTempSecond);
-                Console.WriteLine(string.Join(" ", arrayTempFirst));
-                Console.WriteLine(string.Join(" ", arrayTempSecond));
-                if (arrayTempFirst.Equals(arrayTempSecond))
-                {
-                    arrayResult += $"слова {itemFirst} {itemSecond} анаграммы";
-                    result = true;
-                }
-            }
+            result = true;
         }
         return result;
     }

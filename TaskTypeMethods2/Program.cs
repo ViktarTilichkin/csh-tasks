@@ -4,14 +4,14 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Task1();
-        Task2();
-        Task3();
-        Task4();
-        Task5();
-        Task6();
+        // Task1();
+        // Task2();
+        // Task3();
+        // Task4();
+        // Task5();
+        // Task6();
         Task7();
-        Task8();
+        // Task8();
     }
 
 
@@ -231,11 +231,64 @@ internal class Program
     // 7. Написать метод который принимает строку, если строка содержит только 0 и 1
     // вернуть true, а 0 и 1 перевести в 10-ную систему счисления, в противном случае
     // false (out)
-     static void Task7()
+    static void Task7()
     {
         Console.WriteLine("Задача 7");
-        int[] numbers = { 1, 68, 45, 1, 8, -5, 6, 9, 100 };
-        
+        Console.WriteLine("введите строку 0-ей или 1-иц");
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out _))
+        {
+            bool resultCon = CustomConverNumberTO10(input, out int numberResult);
+            if (resultCon)
+            {
+                Console.WriteLine($"Ваше число в 10 системе - {numberResult}");
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+
+    }
+    static bool CustomConverNumberTO10(string numbers, out int numberResult)
+    {
+        numbers.Trim();
+        bool result = true;
+        string text = "";
+        numberResult = 0;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i].Equals('0'))
+            {
+                text += numbers[i];
+            }
+            else if (numbers[i].Equals('1'))
+            {
+                text += numbers[i];
+            }
+            else
+            {
+                result = false;
+                break;
+            }
+        }
+        if (result)
+        {
+            for (int j = text.Length - 1; j > -1; j--)
+            {
+                Console.WriteLine(j);
+                int num = Convert.ToInt32(text[j].ToString());
+                Console.WriteLine(num);
+                int num2 = (int)Math.Pow(2, j+1);
+                Console.WriteLine(num2);
+                numberResult += num * num2;
+            }
+        }
+        return result;
     }
     #endregion
 
@@ -244,8 +297,17 @@ internal class Program
     static void Task8()
     {
         Console.WriteLine("Задача 8");
-        int[] numbers = { 1, 68, 45, 1, 8, -5, 6, 9, 100 };
-        
+        Console.WriteLine("введите строку 0-ей или 1-иц");
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out int number))
+        {
+
+        }
+        else
+        {
+            Console.WriteLine("Error");
+        }
+
     }
     #endregion
 }
