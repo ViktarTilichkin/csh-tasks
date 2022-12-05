@@ -6,8 +6,8 @@ internal class Program
         // Task1();
         // Task2();
         // Task3();
-        Task4();
-        // Task5();
+        // Task4();
+        Task5();
         // Task6();
         // Task7();
     }
@@ -41,19 +41,29 @@ internal class Program
     //     2. Дано натуральное число (вводится с клавиатуры). Вычислите сумму его цифр
     // используя рекурсию
 
-    // static void Task2()
-    // {
-    //     int number = Convert.ToInt32(Console.ReadLine());
-    //     Console.WriteLine(NumberSumm(number));
-    // }
-    // static int NumberSumm(int n)
-    // {
-    //     if (n == 0 )
-    //     {
-    //         return 0;
-    //     }
-    //     return ;
-    // }
+    static void Task2()
+    {
+        Console.WriteLine("задача 2 ");
+        Console.WriteLine("введите число");
+        string? text = Console.ReadLine();
+        if (int.TryParse(text, out int number))
+        {
+            Console.WriteLine(NumberSumm(number));
+        }
+        else
+        {
+            Console.WriteLine("eror");
+        }
+    }
+    static int NumberSumm(int number)
+    {
+        if (number <= 10)
+        {
+            return number;
+        }
+        int num = number % 10;
+        return num + NumberSumm(number / 10);
+    }
 
     #endregion
     #region Задача 3
@@ -99,7 +109,56 @@ internal class Program
     #region Задача 5
     // 5. Написать метод возвращающий индекс максимального и минимального
     // значения массива (два способа используя кортеж и out).
-    
+    static void Task5()
+    {
+        Console.WriteLine("Задача 5");
+        int[] numbers = { 2, 68, 35, 2, 8, -5, 6, 9, 113 };
+        Console.WriteLine(MetMinMaxCustom1(numbers));
+        MetMinMaxCustom2(out int Min, out int max, numbers);
+        Console.WriteLine($"{Min}, {max}");
+    }
+    static (int, int) MetMinMaxCustom1(params int[] numbers)
+    {
+        int numMin = numbers[0];
+        int numMax = numbers[0];
+        int indexMin = -1;
+        int indexMax = -1;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numMin > numbers[i])
+            {
+                numMin = numbers[i];
+                indexMin = i;
+            }
+            if (numMax < numbers[i])
+            {
+                numMax = numbers[i];
+                indexMax = i;
+            }
+        }
+        return (indexMin, indexMax);
+    }
+    static void MetMinMaxCustom2(out int indexMin, out int indexMax, params int[] numbers)
+    {
+        int numMin = numbers[0];
+        int numMax = numbers[0];
+        indexMin = -1;
+        indexMax = -1;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numMin > numbers[i])
+            {
+                numMin = numbers[i];
+                indexMin = i;
+            }
+            if (numMax < numbers[i])
+            {
+                numMax = numbers[i];
+                indexMax = i;
+            }
+        }
+    }
+
     #endregion
     #region Задача 6
     // 6. На входе 2 числа, написать метод по замене местами чисел в переменных, если
