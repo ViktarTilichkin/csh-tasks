@@ -4,14 +4,14 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        // Task1();
-        // Task2();
-        // Task3();
-        // Task4();
-        // Task5();
-        // Task6();
+        Task1();
+        Task2();
+        Task3();
+        Task4();
+        Task5();
+        Task6();
         Task7();
-        // Task8();
+        Task8();
     }
 
 
@@ -150,6 +150,19 @@ internal class Program
     {
         Console.WriteLine("Задача 4");
 
+    }
+
+    static bool MetSummData(object input, object input2)
+    {
+        bool result = false;
+        if (input is int number && input2 is int number2)
+        {
+            int sum = number + number2;
+        }
+        else if (input is string text && input2 is string text2 )
+        {
+            string sum2 = 
+        }
     }
     #endregion
 
