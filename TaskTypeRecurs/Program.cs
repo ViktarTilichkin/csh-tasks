@@ -7,8 +7,8 @@ internal class Program
         // Task2();
         // Task3();
         // Task4();
-        Task5();
-        // Task6();
+        // Task5();
+        Task6();
         // Task7();
     }
     #region Задача 1
@@ -74,13 +74,13 @@ internal class Program
     //     int number = Convert.ToInt32(Console.ReadLine());
     //     Console.WriteLine(NumberDivider(number));
     // }
-    // static int NumberDivider(int n)
+    // static void NumberDivider(int n)
     // {
     //     if (n == 0 )
     //     {
     //         return 0;
     //     }
-    //     return ;
+    //     return NumberDivider(n/2);
     // }
     #endregion
     #region Задача 4
@@ -162,8 +162,35 @@ internal class Program
     #endregion
     #region Задача 6
     // 6. На входе 2 числа, написать метод по замене местами чисел в переменных, если
-    // первое число кратно двум, второе не кратно и первое число меньше двух
+    // Первое число кратно двум, второе не кратно двум и первое меньше второго числа
     // (результат вернуть в виде кортежа)
+    static void Task6()
+    {
+        Console.WriteLine("задача 6");
+        Console.WriteLine("Введите число 1");
+        string? input1 = Console.ReadLine();
+        Console.WriteLine("Введите число 2");
+        string? input2 = Console.ReadLine();
+        if (double.TryParse(input1, out double number) && double.TryParse(input2, out double number2))
+        {
+            Console.WriteLine(MethodCustReplace(number, number2));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+    }
+    static (double, double) MethodCustReplace(double number, double number2)
+    {
+        if ( number % 2 == 0 && number2 % 2 != 0 && number < number2)
+        {
+            double temp = number2;
+            number2 = number;
+            number = temp;
+        }
+        return (number, number2);
+    }
+
     #endregion
 
     #region Задача 7.
