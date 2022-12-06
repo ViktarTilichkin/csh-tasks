@@ -149,20 +149,42 @@ internal class Program
     static void Task4()
     {
         Console.WriteLine("Задача 4");
+        Console.WriteLine("Введите объект 1");
+        object? input = Console.ReadLine();
+        Console.WriteLine("Введите объект 2");
+        object? input2 = Console.ReadLine();
+        if (input != null && input2 != null)
+        {
+            Console.WriteLine(MetSummData(input, input2));
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
 
     }
 
     static bool MetSummData(object input, object input2)
     {
+        bool isNumber = double.TryParse(input.ToString(), out double number);
+        bool isNumber2 = double.TryParse(input2.ToString(), out double number2);
         bool result = false;
-        if (input is int number && input2 is int number2)
+        if (isNumber && isNumber2)
         {
-            int sum = number + number2;
+            double sum = number + number2;
+            Console.WriteLine(sum);
+            result = true;
+            return result;
         }
-        else if (input is string text && input2 is string text2 )
+        else if (input is string text && input2 is string text2 &&
+                 !isNumber && !isNumber2)
         {
-            string sum2 = 
+            string sum2 = text + text2;
+            Console.WriteLine(sum2);
+            result = true;
+            return result;
         }
+        return result;
     }
     #endregion
 
@@ -296,7 +318,7 @@ internal class Program
                 Console.WriteLine(j);
                 int num = Convert.ToInt32(text[j].ToString());
                 Console.WriteLine(num);
-                int num2 = (int)Math.Pow(2, j+1);
+                int num2 = (int)Math.Pow(2, j + 1);
                 Console.WriteLine(num2);
                 numberResult += num * num2;
             }
@@ -322,7 +344,7 @@ internal class Program
         }
 
     }
-     static bool CustomConverNumberTO16(string numbers, out int numberResult)
+    static bool CustomConverNumberTO16(string numbers, out int numberResult)
     {
         numbers.Trim();
         bool result = true;
@@ -351,7 +373,7 @@ internal class Program
                 Console.WriteLine(j);
                 int num = Convert.ToInt32(text[j].ToString());
                 Console.WriteLine(num);
-                int num2 = (int)Math.Pow(2, j+1);
+                int num2 = (int)Math.Pow(2, j + 1);
                 Console.WriteLine(num2);
                 numberResult += num * num2;
             }
