@@ -3,10 +3,10 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        // Task1();
-        // Task2();
+        Task1();
+        Task2();
         Task3();
-        // Task4();
+        Task4();
     }
     #region Задача 1
     //     1. Написать методы с ипользованием лямбда-оператора по выполнению
@@ -128,26 +128,53 @@ internal class Program
     #region Задача 4
     // 4. Написать метод по расчету корней квадратного уравнения с использованием
     // локального метода
-    // static void Task4()
-    // {
-    //     Console.WriteLine("Задача 4");
-    //     Console.WriteLine("Введите число: ");
-    //     string? input = Console.ReadLine();
-    //     if (double.TryParse(input, out double number))
-    //     {
+    static void Task4()
+    {
+        Console.WriteLine("Задача 4");
+        Console.WriteLine("Введите число А для проверки: ");
+        string? input1 = Console.ReadLine();
+        Console.WriteLine("Введите число B для проверки: ");
+        string? input2 = Console.ReadLine();
+        Console.WriteLine("Введите число С для проверки: ");
+        string? input3 = Console.ReadLine();
+        Console.WriteLine($"Получившиеся уровнение дискриминанта: {input1}*x^2+{input2}*x+{input3}=0");
+        if (double.TryParse(input1, out double numberA) &&
+            double.TryParse(input2, out double numberB) &&
+            double.TryParse(input3, out double numberC))
+        {
+            MetDiskriminant(numberA, numberB, numberC, out _, out _);
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
 
-    //     }
-    //     else
-    //     {
-    //         Console.WriteLine("error");
-    //     }
-
-    // }
-    // static double MetSquare(double number)
-    // {
-
-
-    // }
+    }
+    static void MetDiskriminant(double numberA, double numberB, double numberC, out object? numberX1, out object? numberX2)
+    {
+        numberX1 = null;
+        numberX2 = null;
+        double resultDiscriminant = Math.Pow(numberB, 2) - 4 * numberA * numberC;
+        if (resultDiscriminant > 0)
+        {
+            double rootnumberX1 = (-numberB + Math.Sqrt(resultDiscriminant) / (2 * numberA));
+            double rootnumberX2 = (-numberB - Math.Sqrt(resultDiscriminant) / (2 * numberA));
+            string message = rootnumberX1 > rootnumberX2 ? $"Корень X2: {rootnumberX2}. Корень X1: {rootnumberX1}." : $"Корень X1: {rootnumberX1}. Корень X2: {rootnumberX2}.";
+            numberX1 = rootnumberX1;
+            numberX2 = rootnumberX2;
+            Console.WriteLine($"D = {resultDiscriminant}. {message}");
+        }
+        else if (resultDiscriminant == 0)
+        {
+            double rootnumberX1 = (-numberB) / (2 * numberA);
+            numberX1 = rootnumberX1;
+            Console.WriteLine($"D = 0, уровнение имеет один корень: {rootnumberX1}");
+        }
+        else
+        {
+            Console.WriteLine("D<0. Нет корней");
+        }
+    }
 
     #endregion
 }
