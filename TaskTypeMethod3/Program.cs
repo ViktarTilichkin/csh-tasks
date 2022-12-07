@@ -4,6 +4,9 @@ internal class Program
     static void Main(string[] args)
     {
         Task1();
+        Task2();
+        Task3();
+        Task4();
     }
     #region Задача 1
     //     1. Написать методы с ипользованием лямбда-оператора по выполнению
@@ -16,9 +19,9 @@ internal class Program
         string? opr = Console.ReadLine();
         if (!string.IsNullOrEmpty(opr))
         {
-        System.Console.WriteLine(Switch(opr: opr, number1: number1, number2: number2));
+            System.Console.WriteLine(Switch(opr: opr, number1: number1, number2: number2));
         }
-        else 
+        else
         {
             Console.WriteLine("error");
         }
@@ -45,14 +48,48 @@ internal class Program
     // участка, в виде HH:MM:SS, длинну учатска контроля скорости и среднюю
     // допустимую скорость участка
     // В задаче использовать необязательные парметры, локальные методы.
+     static void Task2()
+    {
+        Console.WriteLine("Задача 2");
+        string[] text = new string[0];
+
+    }
+
     #endregion
     #region Задача 3 
     // 3. Написать метод увеличению размера массива и заполнения его значениями
     // В задаче использовать необязательные парметры, локальные методы.
+    static void Task3()
+    {
+        Console.WriteLine("Задача 3");
+        string[] text = new string[0];
+
+    }
     #endregion
-    
+
     #region Задача 4
     // 4. Написать метод по расчету корней квадратного уравнения с использованием
     // локального метода
+    static void Task4()
+    {
+        Console.WriteLine("Задача 4");
+        Console.WriteLine("Введите число: ");
+        string? input = Console.ReadLine();
+        if (double.TryParse(input, out double number))
+        {
+            
+        }
+        else
+        {
+            Console.WriteLine("error");
+        }
+
+    }
+    static double MetSquare(double number)
+    {
+        
+
+    }
+
     #endregion
 }
