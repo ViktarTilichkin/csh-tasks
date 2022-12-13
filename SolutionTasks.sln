@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTypeMethod3", "TaskType
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTypeRecurs", "TaskTypeRecurs\TaskTypeRecurs.csproj", "{90B9B958-67A6-4A5D-B7D8-AD05501D7937}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guess-the-number", "Guess-the-number\Guess-the-number.csproj", "{3E4BA393-1466-4FA1-A591-D1B605FDF499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,9 @@ Global
 		{90B9B958-67A6-4A5D-B7D8-AD05501D7937}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B9B958-67A6-4A5D-B7D8-AD05501D7937}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90B9B958-67A6-4A5D-B7D8-AD05501D7937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4BA393-1466-4FA1-A591-D1B605FDF499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4BA393-1466-4FA1-A591-D1B605FDF499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4BA393-1466-4FA1-A591-D1B605FDF499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4BA393-1466-4FA1-A591-D1B605FDF499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
