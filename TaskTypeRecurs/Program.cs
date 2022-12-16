@@ -3,13 +3,13 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Task1();
-        Task2();
-        // Task3();
-        Task4();
-        Task5();
-        Task6();
-        Task7();
+        // Task1();
+        // Task2();
+        Task3();
+        // Task4();
+        // Task5();
+        // Task6();
+        // Task7();
     }
     #region Задача 1
     //     1. Написать метод, рассчитывающий число из рада Фиббоначчи используя
@@ -69,19 +69,56 @@ internal class Program
     #region Задача 3
     // 3. Дано натуральное число больше 1 (вводится с клавиатуры). Выведите все простые
     // делители этого числа используя рекурсию
-    // static void Task3()
-    // {
-    //     int number = Convert.ToInt32(Console.ReadLine());
-    //     Console.WriteLine(NumberDivider(number));
-    // }
-    // static void NumberDivider(int n)
-    // {
-    //     if (n == 0 )
-    //     {
-    //         return 0;
-    //     }
-    //     return NumberDivider(n/2);
-    // }
+    static void Task3()
+    {
+        int number = Convert.ToInt32(Console.ReadLine());
+        NumberDivider(number);
+    }
+    static void NumberDivider(int n)
+    {
+        if (n > 1)
+        {
+            int num = n / 2;
+            NumberAraySimp(num, n);
+        }
+        else
+        {
+            Console.WriteLine("error input");
+        }
+    }
+    static int NumberAraySimp(int num, int n)
+    {
+        if (num == 1)
+        {
+            return 1;
+        }
+        if (NumberIsSimple(num) && n % num == 0)
+        {
+           Console.Write($"{num} ");
+        }
+        return NumberAraySimp(num - 1, n);
+    }
+    static bool NumberIsSimple(int num)
+    {
+        bool result = true;
+        if (num / num == 1 && num / 1 == num)
+        {
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+        else
+        {
+            result = false;
+            return result;
+        }
+    }
     #endregion
     #region Задача 4
     // 4. Дано натуральное число больше 1 (вводится с клавиатуры). Выведите «Точная
