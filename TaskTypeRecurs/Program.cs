@@ -3,13 +3,13 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        // Task1();
-        // Task2();
+        Task1();
+        Task2();
         Task3();
-        // Task4();
-        // Task5();
-        // Task6();
-        // Task7();
+        Task4();
+        Task5();
+        Task6();
+        Task7();
     }
     #region Задача 1
     //     1. Написать метод, рассчитывающий число из рада Фиббоначчи используя
