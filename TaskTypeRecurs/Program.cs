@@ -73,13 +73,13 @@ internal class Program
     {
         int number = Convert.ToInt32(Console.ReadLine());
         NumberDivider(number);
+        // Console.WriteLine(IsNumSim(number, number / 2));
     }
     static void NumberDivider(int n)
     {
         if (n > 1)
         {
-            int num = n / 2;
-            NumberAraySimp(num, n);
+            NumberAraySimp(2, n);
         }
         else
         {
@@ -88,37 +88,49 @@ internal class Program
     }
     static int NumberAraySimp(int num, int n)
     {
-        if (num == 1)
+        if (num > n / 2)
         {
-            return 1;
+            return n;
         }
-        if (NumberIsSimple(num) && n % num == 0)
+        if (n % num == 0 && IsNumSim(num, num / 2))
         {
-           Console.Write($"{num} ");
+            Console.Write($"{num} ");
         }
-        return NumberAraySimp(num - 1, n);
+        return NumberAraySimp(num + 1, n);
     }
-    static bool NumberIsSimple(int num)
+       static bool IsNumSim(int num, int dif)
     {
-        bool result = true;
-        if (num / num == 1 && num / 1 == num)
+        if (dif <= 1)
         {
-            for (int i = 2; i < num; i++)
-            {
-                if (num % i == 0)
-                {
-                    result = false;
-                    break;
-                }
-            }
-            return result;
+            return true;
         }
-        else
+        else if (num % dif == 0)
         {
-            result = false;
-            return result;
+            return false;
         }
+        return IsNumSim(num, dif - 1);
     }
+     // static bool NumberIsSimple(int num)
+    // {
+    //     bool result = true;
+    //     if (num / num == 1 && num / 1 == num)
+    //     {
+    //         for (int i = 2; i < num; i++)
+    //         {
+    //             if (num % i == 0)
+    //             {
+    //                 result = false;
+    //                 break;
+    //             }
+    //         }
+    //         return result;
+    //     }
+    //     else
+    //     {
+    //         result = false;
+    //         return result;
+    //     }
+    // }
     #endregion
     #region Задача 4
     // 4. Дано натуральное число больше 1 (вводится с клавиатуры). Выведите «Точная
